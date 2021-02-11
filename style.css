@@ -24,7 +24,7 @@ h1,h2,h3 {
 }
 
 #header {
-    border: #FFFFFF;
+    border: double #FFFFFF;
 }
 
 #name {
@@ -33,6 +33,7 @@ h1,h2,h3 {
 
 #title {
     margin-bottom: 2px;
+    width: auto;
 }
 
 h2 {
