@@ -9,11 +9,10 @@ body {
 }
 
 img {
-    display: block  ;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
-    max-height: 500px;
+    max-height: 600px;
     object-fit: cover;
 }
 
@@ -24,7 +23,17 @@ h1,h2,h3 {
 }
 
 #header {
-    border: double #FFFFFF;
+    border: double #FFFFFF 5px;
+    padding-left: 5%;
+    padding-right: 5%;
+    width: fit-content;
+    margin: auto;
+}
+
+.section {
+    border: solid #FFFFFF 2px;
+    padding: 2%;
+    margin-top: 5%;
 }
 
 #name {
@@ -37,12 +46,13 @@ h1,h2,h3 {
 }
 
 h2 {
-    margin-top: 50px;
+    margin-top: 0px;
     margin-bottom: 0px;
 }
 
 .list {
     text-align: center;
+    margin-top: 20px;
 }
 
 ul {
