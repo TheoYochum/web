@@ -45,32 +45,44 @@ p {
 /* Header Border, Centering, and Padding */
 #header {
     border: double #FFFFFF 5px;
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-left: 2%;
+    padding-right: 2%;
     width: fit-content;
     margin: auto;
 }
 
-#name {
-    margin-top: 2px;
-}
-
 #title {
-    margin-bottom: 2px;
     width: auto;
 }
 
-/* Table of Contents Formatting */
-.list {
-    text-align: center;
-    margin-top: 20px;
+/* Navbar */
+
+.navbar ul {
+    list-style-type: none;
+    border: solid #FFFFFF 2px;
+    padding-left: 0px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    
+}
+.navbar li {
+    display: inline;
+    padding-right: 0px;
 }
 
-ul {
-    text-align: left;
-    display: inline-block;
-    margin-top: 0px;
+.navbar a {
+    padding-top: 12px;
+    padding-bottom: 13px;
+    padding-right: 20px;
+    padding-left: 20px;
+    border-right: solid #FFFFFF 1px;
 }
+
+.navbar a.active {
+    color: #CCCCCC;
+}
+
 
 /* Links */
 a:link {
@@ -83,7 +95,3 @@ a:visited {
     text-decoration: none;
 }
 
-#navigation {
-    margin-top: 50px;
-    font-size: larger;
-}
