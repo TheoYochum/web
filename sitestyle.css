@@ -56,30 +56,31 @@ p {
 }
 
 /* Navbar */
-
 .navbar ul {
     list-style-type: none;
+    margin: 0px;
+    margin-bottom: 16px;
+    padding: 0px;
+    overflow: hidden;
     border: solid #FFFFFF 2px;
-    padding-left: 0px;
-    padding-top: 12px;
-    padding-bottom: 12px;
     text-align: left;
     
 }
 .navbar li {
-    display: inline;
+    float: left;
 }
 
 .navbar a {
-    padding-top: 12px;
-    padding-bottom: 12px;
+    display: block;
+    border-right: solid #FFFFFF 1px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     padding-right: 20px;
     padding-left: 20px;
-    border-right: solid #FFFFFF 1px;
 }
 
 .navbar a.active {
-   /* color: #CCCCCC; */
+    /* color: #CCCCCC; */
     background-color: #CCCCCC;
 }
 
