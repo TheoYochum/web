@@ -5,6 +5,8 @@ body {
     padding-right: 5%;
     padding-top: 2%;
     padding-bottom: 2%;
+    margin-left: 0px;
+    margin-right: 0px;
     background-color: #14213D;
     color: #FFFFFF;
 }
@@ -49,6 +51,7 @@ p {
     padding-right: 2%;
     width: fit-content;
     margin: auto;
+    margin-top: 50px;
 }
 
 #title {
@@ -59,12 +62,14 @@ p {
 .navbar ul {
     list-style-type: none;
     margin: 0px;
-    margin-bottom: 16px;
     padding: 0px;
     overflow: hidden;
     border: solid #FFFFFF 2px;
     text-align: left;
-    
+    position: fixed;
+    width: 90%;
+    top: 10px;
+    background-color: #14213D;
 }
 .navbar li {
     float: left;
@@ -80,19 +85,21 @@ p {
 }
 
 .navbar a.active {
-    /* color: #CCCCCC; */
-    background-color: #CCCCCC;
+    background-color: #FFFFFF;
 }
 
+.navbar a:hover {
+    background-color: #a5a5a5;
+}
 
 /* Links */
 a:link {
     text-decoration: none;
-    color: #FCA311;
+    color: #eb9813;
 }
 
 a:visited {
-    color: #FCA311; 
+    color: #eb9813; 
     text-decoration: none;
 }
 
