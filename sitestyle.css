@@ -12,8 +12,6 @@ body {
 }
 
 img {
-    margin-left: auto;
-    margin-right: auto;
     width: 50%;
     max-height: 600px;
     object-fit: cover;
@@ -54,16 +52,11 @@ p {
     margin-top: 50px;
 }
 
-#title {
-    width: auto;
-}
-
 /* Navbar */
 .navbar ul {
     list-style-type: none;
     margin: 0px;
     padding: 0px;
-    overflow: hidden;
     border: solid #FFFFFF 2px;
     text-align: left;
     position: fixed;
