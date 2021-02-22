@@ -93,6 +93,12 @@ p {
     background-color: #14213D;
 }
 
+#assignment {
+    float: right;
+    border-left: solid #FFFFFF 1px;
+    border-right: none;
+}
+
 /* Links */
 a:link {
     text-decoration: none;
