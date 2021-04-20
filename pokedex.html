@@ -1,9 +1,9 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title> The Pokedex Theo Yochum</title>
+        <title> The Pokedex Theo Yochum </title>
         <style>
-
+        /*Basic page formatting*/
             @font-face {
                 font-family: pokedex;
                 src: url(https://theoyochum.github.io/web/gameboy.ttf);
@@ -22,14 +22,18 @@
                 border-collapse: collapse;
                 margin-left: auto;
                 margin-right: auto;
+                border-bottom: solid 5px;
             }
 
             tr {
                 border: solid 5px;
+                border-bottom: none;
             }
 
             td {
                 border-right: solid 1px;
+                padding-left: 5px;
+                padding-right: 5px;
             }
 
             td.header{
@@ -38,2445 +42,2366 @@
                 padding-top: 5px;
                 padding-bottom: 5px;
             }
+            /* Attribute coloring */
+            .health0 {
+                background-color: #4de042;
+            }
 
+            .health1 {
+                background-color: #44B73D;
+            }
+
+            .health2 {
+                background-color: #3D9C36;
+            }
+
+            .health3 {
+                background-color: #33822E;
+            }
+
+            .health4 {
+                background-color: #19692d;
+            }
+
+            .attack0 {
+                background-color: #ff1b1b;
+            }
+
+            .attack1 {
+                background-color: #c91b1b;
+            }
+
+            .attack2 {
+                background-color: #991919;
+            }
+
+            .attack3 {
+                background-color: #9e1b1b;
+            }
+
+            .attack4 {
+                background-color: #8b1818;
+            }
+
+            .defense0 {
+                background-color: #1f1bff;
+            }
+
+            .defense1 {
+                background-color: #391ecf;
+            }
+
+            .defense2 {
+                background-color: #1f29b8;
+            }
+
+            .defense3 {
+                background-color: #1d1f99;
+            }
+
+            .defense4 {
+                background-color: #0d0f5e;
+            }
+
+            .spatk0 {
+                background-color: #ff8119;
+            }
+
+            .spatk1 {
+                background-color: #c9611b;
+            }
+
+            .spatk2 {
+                background-color: #9e5816;
+            }
+
+            .spatk3 {
+                background-color: #964b0e;
+            }
+
+            .spatk4 {
+                background-color: #80380f;
+            }
+
+            .spdef0 {
+                background-color: #19abff;
+            }
+
+            .spdef1 {
+                background-color: #1ba6c9;
+            }
+
+            .spdef2 {
+                background-color: #168c94;
+            }
+
+            .spdef3 {
+                background-color: #0c5b74;
+            }
+
+            .spdef4 {
+                background-color: #0f4d77;
+            }
+
+            .speed0 {
+                background-color: #f8f8f8;
+            }
+
+            .speed1 {
+                background-color: #c5c5c5;
+            }
+
+            .speed2 {
+                background-color: #979797;
+            }
+
+            .speed3 {
+                background-color: #727272;
+            }
+
+            .speed4 {
+                background-color: #585858;
+            }
+
+            .genrby {
+                background: linear-gradient(to right, #ff1111 0%, #ff1111 33%, #1111ff 34%, #1111ff 67%, #ffd733 68%, #ffd733 100%);
+            }
+
+            .genrb {
+                background: linear-gradient(to right, #ff1111 0%, #ff1111 50%, #1111ff 50.1%, #1111ff 100%);
+            }
+
+            .genry {
+                background: linear-gradient(to right, #ff1111 0%, #ff1111 50%, #ffd733 50.1%, #ffd733 100%);
+            }
+
+            .genby {
+                background: linear-gradient(to right, #1111ff 0%, #1111ff 50%, #ffd733 50.1%, #ffd733 100%);
+            }
+
+            .genr {
+                background-color: #ff1111;
+            }
+
+            .genb {
+                background-color: #1111ff;
+            }
+
+            .geny {
+                background-color: #ffd733;
+            }
+            
+            .normal {
+                background-color: #A8A77A;
+            }
+
+            .fire {
+                background-color: #EE8130;
+            }
+
+            .water {
+                background-color: #6390F0;
+            }
+
+            .electric {
+                background-color: #F7D02C;
+            }
+
+            .grass {
+                background-color: #7AC74C;
+            }
+
+            .ice {
+                background-color: #96D9D6;
+            }
+
+            .fighting {
+                background-color: #C22E28;
+            }
+
+            .poison {
+                background-color: #A33EA1;
+            }
+
+            .ground {
+                background-color: #E2BF65;
+            }
+
+            .flying {
+                background-color: #A98FF3;
+            }
+
+            .psychic {
+                background-color: #F95587;
+            }
+
+            .bug {
+                background-color: #A6B91A;
+            }
+
+            .rock {
+                background-color: #B6A136;
+            }
+
+            .ghost {
+                background-color: #735797;
+            }
+
+            .dragon {
+                background-color: #6F35FC;
+            }
+
+            .steel{
+                background-color: #B7B7CE;
+            }
+
+            .fairy {
+                background-color: #D685AD;
+            }
+
+            .none {
+                background-color: grey;
+            }
+
+            tr.true {
+                border-color: gold;
+                border-bottom: solid gold 5px ;
+            }
 
         </style>
     </head>
     <body>
         <h1>The Pokedex</h1>
-        <p>I have always enjoyed pokemon and as a kid the anime was one of my favorite things to watch, and one of my moms least favorite due to the fact that the pokemon constantly shout their own name over and over. I was never super into the games but they always looked fun. If I had to choose a favorite Gen 1 pokemon it would probably be Bulbasaur with pikachu coming in close second because of course.This project seemed like it would be pretty cool because you are given a lot of different numbers you can mess around with, and most of them have associated colors allowing you to do some pretty fun stuff with the styling. I should make a key to indicate what exactly the colors mean but there are comments in the code denoting how and why specific things were done.</p>
+        <h2>By Theodore Yochum</h2>
+        <p>I have always enjoyed pokemon and as a kid the anime was one of my favorite things to watch, and one of my moms least favorite due to the fact that the pokemon constantly shout their own name over and over. I was never super into the games but they always looked fun. If I had to choose a favorite Gen 1 pokemon it would probably be Bulbasaur with pikachu coming in close second because of course. This project seemed like it would be pretty cool because you are given a lot of different numbers you can mess around with, and most of them have associated colors allowing you to do some pretty fun stuff with the styling. For this project I, made it so that the pokemon types are colored according to the original values, each attribute with a numerical value is colored on a gradient at 20% intervals with the lowest value being the lightest color and the highest being the darkest color, also each entry has a game version column which is colored corresponding to which version of pokemon it appeared in. The few pokemon that have gold colored borders are legendaries. The entire website uses a font that is inteded to replicate the original gameboy font.</p>
         <table>
-            <tr>
+            <tr class="header">
                 <td  class="header">Image</td>
                 <td  class="header">#</td>
                 <td  class="header">Name</td>
                 <td  class="header">Type 1</td>
                 <td  class="header">Type 2</td>
-                <td  class="header">Total</td>
                 <td  class="header">HP</td>
                 <td  class="header">Attack</td>
                 <td  class="header">Defense</td>
                 <td  class="header">Sp. Atk</td>
                 <td  class="header">Sp. Def</td>
                 <td  class="header">Speed</td>
-                <td  class="header">Generation</td>
-                <td  class="header">Legendary</td>
+                <td  class="header">Game Version</td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/1.png" alt="Image of Bulbasaur"></td>
                 <td  class="pokemon number">1</td>
-                <td  class="pokemon name">Bulbasaur</td>
+                <td  class="False">Bulbasaur</td>
                 <td  class="grass">Grass</td>
                 <td  class="poison">Poison</td>
-                <td  class="total">318</td>
                 <td  class="health0">45</td>
                 <td  class="attack1">49</td>
                 <td  class="defense1">49</td>
                 <td  class="spatk1">65</td>
                 <td  class="spdef1">65</td>
                 <td  class="speed1">45</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/2.png" alt="Image of Ivysaur"></td>
                 <td  class="pokemon number">2</td>
-                <td  class="pokemon name">Ivysaur</td>
+                <td  class="False">Ivysaur</td>
                 <td  class="grass">Grass</td>
                 <td  class="poison">Poison</td>
-                <td  class="total">405</td>
                 <td  class="health1">60</td>
                 <td  class="attack2">62</td>
                 <td  class="defense1">63</td>
                 <td  class="spatk2">80</td>
                 <td  class="spdef2">80</td>
                 <td  class="speed1">60</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/3.png" alt="Image of Venusaur"></td>
                 <td  class="pokemon number">3</td>
-                <td  class="pokemon name">Venusaur</td>
+                <td  class="False">Venusaur</td>
                 <td  class="grass">Grass</td>
                 <td  class="poison">Poison</td>
-                <td  class="total">525</td>
                 <td  class="health1">80</td>
                 <td  class="attack2">82</td>
                 <td  class="defense2">83</td>
                 <td  class="spatk2">100</td>
                 <td  class="spdef3">100</td>
                 <td  class="speed2">80</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/4.png" alt="Image of Charmander"></td>
                 <td  class="pokemon number">4</td>
-                <td  class="pokemon name">Charmander</td>
+                <td  class="False">Charmander</td>
                 <td  class="fire">Fire</td>
-                <td  class=""></td>
-                <td  class="total">309</td>
+                <td  class="none">None</td>
                 <td  class="health0">39</td>
                 <td  class="attack1">52</td>
                 <td  class="defense1">43</td>
                 <td  class="spatk1">60</td>
                 <td  class="spdef1">50</td>
                 <td  class="speed1">65</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/5.png" alt="Image of Charmeleon"></td>
                 <td  class="pokemon number">5</td>
-                <td  class="pokemon name">Charmeleon</td>
+                <td  class="False">Charmeleon</td>
                 <td  class="fire">Fire</td>
-                <td  class=""></td>
-                <td  class="total">405</td>
+                <td  class="none">None</td>
                 <td  class="health0">58</td>
                 <td  class="attack2">64</td>
                 <td  class="defense1">58</td>
                 <td  class="spatk2">80</td>
                 <td  class="spdef1">65</td>
                 <td  class="speed2">80</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/6.png" alt="Image of Charizard"></td>
                 <td  class="pokemon number">6</td>
-                <td  class="pokemon name">Charizard</td>
+                <td  class="False">Charizard</td>
                 <td  class="fire">Fire</td>
                 <td  class="flying">Flying</td>
-                <td  class="total">534</td>
                 <td  class="health1">78</td>
                 <td  class="attack2">84</td>
                 <td  class="defense2">78</td>
                 <td  class="spatk3">109</td>
                 <td  class="spdef2">85</td>
                 <td  class="speed3">100</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/7.png" alt="Image of Squirtle"></td>
                 <td  class="pokemon number">7</td>
-                <td  class="pokemon name">Squirtle</td>
+                <td  class="False">Squirtle</td>
                 <td  class="water">Water</td>
-                <td  class=""></td>
-                <td  class="total">314</td>
+                <td  class="none">None</td>
                 <td  class="health0">44</td>
                 <td  class="attack1">48</td>
                 <td  class="defense1">65</td>
                 <td  class="spatk1">50</td>
                 <td  class="spdef1">64</td>
                 <td  class="speed1">43</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/8.png" alt="Image of Wartortle"></td>
                 <td  class="pokemon number">8</td>
-                <td  class="pokemon name">Wartortle</td>
+                <td  class="False">Wartortle</td>
                 <td  class="water">Water</td>
-                <td  class=""></td>
-                <td  class="total">405</td>
+                <td  class="none">None</td>
                 <td  class="health0">59</td>
                 <td  class="attack2">63</td>
                 <td  class="defense2">80</td>
                 <td  class="spatk1">65</td>
                 <td  class="spdef2">80</td>
                 <td  class="speed1">58</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/9.png" alt="Image of Blastoise"></td>
                 <td  class="pokemon number">9</td>
-                <td  class="pokemon name">Blastoise</td>
+                <td  class="False">Blastoise</td>
                 <td  class="water">Water</td>
-                <td  class=""></td>
-                <td  class="total">530</td>
+                <td  class="none">None</td>
                 <td  class="health1">79</td>
                 <td  class="attack2">83</td>
                 <td  class="defense2">100</td>
                 <td  class="spatk2">85</td>
                 <td  class="spdef3">105</td>
                 <td  class="speed2">78</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/10.png" alt="Image of Caterpie"></td>
                 <td  class="pokemon number">10</td>
-                <td  class="pokemon name">Caterpie</td>
+                <td  class="False">Caterpie</td>
                 <td  class="bug">Bug</td>
-                <td  class=""></td>
-                <td  class="total">195</td>
+                <td  class="none">None</td>
                 <td  class="health0">45</td>
                 <td  class="attack0">30</td>
                 <td  class="defense0">35</td>
                 <td  class="spatk0">20</td>
                 <td  class="spdef0">20</td>
                 <td  class="speed1">45</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/11.png" alt="Image of Metapod"></td>
                 <td  class="pokemon number">11</td>
-                <td  class="pokemon name">Metapod</td>
+                <td  class="False">Metapod</td>
                 <td  class="bug">Bug</td>
-                <td  class=""></td>
-                <td  class="total">205</td>
+                <td  class="none">None</td>
                 <td  class="health0">50</td>
                 <td  class="attack0">20</td>
                 <td  class="defense1">55</td>
                 <td  class="spatk0">25</td>
                 <td  class="spdef0">25</td>
                 <td  class="speed0">30</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/12.png" alt="Image of Butterfree"></td>
                 <td  class="pokemon number">12</td>
-                <td  class="pokemon name">Butterfree</td>
+                <td  class="False">Butterfree</td>
                 <td  class="bug">Bug</td>
                 <td  class="flying">Flying</td>
-                <td  class="total">395</td>
                 <td  class="health1">60</td>
                 <td  class="attack1">45</td>
                 <td  class="defense1">50</td>
                 <td  class="spatk2">90</td>
                 <td  class="spdef2">80</td>
                 <td  class="speed1">70</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/13.png" alt="Image of Weedle"></td>
                 <td  class="pokemon number">13</td>
-                <td  class="pokemon name">Weedle</td>
+                <td  class="False">Weedle</td>
                 <td  class="bug">Bug</td>
                 <td  class="poison">Poison</td>
-                <td  class="total">195</td>
                 <td  class="health0">40</td>
                 <td  class="attack1">35</td>
                 <td  class="defense0">30</td>
                 <td  class="spatk0">20</td>
                 <td  class="spdef0">20</td>
                 <td  class="speed1">50</td>
-                <td  class="genrb">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrb"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/14.png" alt="Image of Kakuna"></td>
                 <td  class="pokemon number">14</td>
-                <td  class="pokemon name">Kakuna</td>
+                <td  class="False">Kakuna</td>
                 <td  class="bug">Bug</td>
                 <td  class="poison">Poison</td>
-                <td  class="total">205</td>
                 <td  class="health0">45</td>
                 <td  class="attack0">25</td>
                 <td  class="defense1">50</td>
                 <td  class="spatk0">25</td>
                 <td  class="spdef0">25</td>
                 <td  class="speed0">35</td>
-                <td  class="genrb">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrb"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/15.png" alt="Image of Beedrill"></td>
                 <td  class="pokemon number">15</td>
-                <td  class="pokemon name">Beedrill</td>
+                <td  class="False">Beedrill</td>
                 <td  class="bug">Bug</td>
                 <td  class="poison">Poison</td>
-                <td  class="total">395</td>
                 <td  class="health1">65</td>
                 <td  class="attack3">90</td>
                 <td  class="defense0">40</td>
                 <td  class="spatk0">45</td>
                 <td  class="spdef2">80</td>
                 <td  class="speed2">75</td>
-                <td  class="genrb">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrb"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/16.png" alt="Image of Pidgey"></td>
                 <td  class="pokemon number">16</td>
-                <td  class="pokemon name">Pidgey</td>
+                <td  class="False">Pidgey</td>
                 <td  class="normal">Normal</td>
                 <td  class="flying">Flying</td>
-                <td  class="total">251</td>
                 <td  class="health0">40</td>
                 <td  class="attack1">45</td>
                 <td  class="defense0">40</td>
                 <td  class="spatk0">35</td>
                 <td  class="spdef0">35</td>
                 <td  class="speed1">56</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/17.png" alt="Image of Pidgeotto"></td>
                 <td  class="pokemon number">17</td>
-                <td  class="pokemon name">Pidgeotto</td>
+                <td  class="False">Pidgeotto</td>
                 <td  class="normal">Normal</td>
                 <td  class="flying">Flying</td>
-                <td  class="total">349</td>
                 <td  class="health1">63</td>
                 <td  class="attack2">60</td>
                 <td  class="defense1">55</td>
                 <td  class="spatk1">50</td>
                 <td  class="spdef1">50</td>
                 <td  class="speed2">71</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/18.png" alt="Image of Pidgeot"></td>
                 <td  class="pokemon number">18</td>
-                <td  class="pokemon name">Pidgeot</td>
+                <td  class="False">Pidgeot</td>
                 <td  class="normal">Normal</td>
                 <td  class="flying">Flying</td>
-                <td  class="total">479</td>
                 <td  class="health1">83</td>
                 <td  class="attack2">80</td>
                 <td  class="defense1">75</td>
                 <td  class="spatk1">70</td>
                 <td  class="spdef2">70</td>
                 <td  class="speed3">101</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/19.png" alt="Image of Rattata"></td>
                 <td  class="pokemon number">19</td>
-                <td  class="pokemon name">Rattata</td>
+                <td  class="False">Rattata</td>
                 <td  class="normal">Normal</td>
-                <td  class=""></td>
-                <td  class="total">253</td>
+                <td  class="none">None</td>
                 <td  class="health0">30</td>
                 <td  class="attack1">56</td>
                 <td  class="defense0">35</td>
                 <td  class="spatk0">25</td>
                 <td  class="spdef0">35</td>
                 <td  class="speed2">72</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/20.png" alt="Image of Raticate"></td>
                 <td  class="pokemon number">20</td>
-                <td  class="pokemon name">Raticate</td>
+                <td  class="False">Raticate</td>
                 <td  class="normal">Normal</td>
-                <td  class=""></td>
-                <td  class="total">413</td>
+                <td  class="none">None</td>
                 <td  class="health0">55</td>
                 <td  class="attack2">81</td>
                 <td  class="defense1">60</td>
                 <td  class="spatk1">50</td>
                 <td  class="spdef2">70</td>
                 <td  class="speed2">97</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/21.png" alt="Image of Spearow"></td>
                 <td  class="pokemon number">21</td>
-                <td  class="pokemon name">Spearow</td>
+                <td  class="False">Spearow</td>
                 <td  class="normal">Normal</td>
                 <td  class="flying">Flying</td>
-                <td  class="total">262</td>
                 <td  class="health0">40</td>
                 <td  class="attack2">60</td>
                 <td  class="defense0">30</td>
                 <td  class="spatk0">31</td>
                 <td  class="spdef0">31</td>
                 <td  class="speed1">70</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/22.png" alt="Image of Fearow"></td>
                 <td  class="pokemon number">22</td>
-                <td  class="pokemon name">Fearow</td>
+                <td  class="False">Fearow</td>
                 <td  class="normal">Normal</td>
                 <td  class="flying">Flying</td>
-                <td  class="total">442</td>
                 <td  class="health1">65</td>
                 <td  class="attack3">90</td>
                 <td  class="defense1">65</td>
                 <td  class="spatk1">61</td>
                 <td  class="spdef1">61</td>
                 <td  class="speed3">100</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/23.png" alt="Image of Ekans"></td>
                 <td  class="pokemon number">23</td>
-                <td  class="pokemon name">Ekans</td>
+                <td  class="False">Ekans</td>
                 <td  class="poison">Poison</td>
-                <td  class=""></td>
-                <td  class="total">288</td>
+                <td  class="none">None</td>
                 <td  class="health0">35</td>
                 <td  class="attack2">60</td>
                 <td  class="defense1">44</td>
                 <td  class="spatk0">40</td>
                 <td  class="spdef1">54</td>
                 <td  class="speed1">55</td>
-                <td  class="genr">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genr"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/24.png" alt="Image of Arbok"></td>
                 <td  class="pokemon number">24</td>
-                <td  class="pokemon name">Arbok</td>
+                <td  class="False">Arbok</td>
                 <td  class="poison">Poison</td>
-                <td  class=""></td>
-                <td  class="total">438</td>
+                <td  class="none">None</td>
                 <td  class="health1">60</td>
                 <td  class="attack2">85</td>
                 <td  class="defense1">69</td>
                 <td  class="spatk1">65</td>
                 <td  class="spdef2">79</td>
                 <td  class="speed2">80</td>
-                <td  class="genr">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genr"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/25.png" alt="Image of Pikachu"></td>
                 <td  class="pokemon number">25</td>
-                <td  class="pokemon name">Pikachu</td>
+                <td  class="False">Pikachu</td>
                 <td  class="electric">Electric</td>
-                <td  class=""></td>
-                <td  class="total">320</td>
+                <td  class="none">None</td>
                 <td  class="health0">35</td>
                 <td  class="attack1">55</td>
                 <td  class="defense0">40</td>
                 <td  class="spatk1">50</td>
                 <td  class="spdef1">50</td>
                 <td  class="speed2">90</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/26.png" alt="Image of Raichu"></td>
                 <td  class="pokemon number">26</td>
-                <td  class="pokemon name">Raichu</td>
+                <td  class="False">Raichu</td>
                 <td  class="electric">Electric</td>
-                <td  class=""></td>
-                <td  class="total">485</td>
+                <td  class="none">None</td>
                 <td  class="health1">60</td>
                 <td  class="attack3">90</td>
                 <td  class="defense1">55</td>
                 <td  class="spatk2">90</td>
                 <td  class="spdef2">80</td>
                 <td  class="speed3">110</td>
-                <td  class="genrb">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrb"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/27.png" alt="Image of Sandshrew"></td>
                 <td  class="pokemon number">27</td>
-                <td  class="pokemon name">Sandshrew</td>
+                <td  class="False">Sandshrew</td>
                 <td  class="ground">Ground</td>
-                <td  class=""></td>
-                <td  class="total">300</td>
+                <td  class="none">None</td>
                 <td  class="health0">50</td>
                 <td  class="attack2">75</td>
                 <td  class="defense2">85</td>
                 <td  class="spatk0">20</td>
                 <td  class="spdef0">30</td>
                 <td  class="speed0">40</td>
-                <td  class="genby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/28.png" alt="Image of Sandslash"></td>
                 <td  class="pokemon number">28</td>
-                <td  class="pokemon name">Sandslash</td>
+                <td  class="False">Sandslash</td>
                 <td  class="ground">Ground</td>
-                <td  class=""></td>
-                <td  class="total">450</td>
+                <td  class="none">None</td>
                 <td  class="health1">75</td>
                 <td  class="attack3">100</td>
                 <td  class="defense2">110</td>
                 <td  class="spatk0">45</td>
                 <td  class="spdef1">55</td>
                 <td  class="speed1">65</td>
-                <td  class="genby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/29.png" alt="Image of Nidoran♀"></td>
                 <td  class="pokemon number">29</td>
-                <td  class="pokemon name">Nidoran♀</td>
+                <td  class="False">Nidoran♀</td>
                 <td  class="poison">Poison</td>
-                <td  class=""></td>
-                <td  class="total">275</td>
+                <td  class="none">None</td>
                 <td  class="health0">55</td>
                 <td  class="attack1">47</td>
                 <td  class="defense1">52</td>
                 <td  class="spatk0">40</td>
                 <td  class="spdef0">40</td>
                 <td  class="speed0">41</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/30.png" alt="Image of Nidorina"></td>
                 <td  class="pokemon number">30</td>
-                <td  class="pokemon name">Nidorina</td>
+                <td  class="False">Nidorina</td>
                 <td  class="poison">Poison</td>
-                <td  class=""></td>
-                <td  class="total">365</td>
+                <td  class="none">None</td>
                 <td  class="health1">70</td>
                 <td  class="attack2">62</td>
                 <td  class="defense1">67</td>
                 <td  class="spatk1">55</td>
                 <td  class="spdef1">55</td>
                 <td  class="speed1">56</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/31.png" alt="Image of Nidoqueen"></td>
                 <td  class="pokemon number">31</td>
-                <td  class="pokemon name">Nidoqueen</td>
+                <td  class="False">Nidoqueen</td>
                 <td  class="poison">Poison</td>
                 <td  class="ground">Ground</td>
-                <td  class="total">505</td>
                 <td  class="health1">90</td>
                 <td  class="attack3">92</td>
                 <td  class="defense2">87</td>
                 <td  class="spatk1">75</td>
                 <td  class="spdef2">85</td>
                 <td  class="speed2">76</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/32.png" alt="Image of Nidoran♂"></td>
                 <td  class="pokemon number">32</td>
-                <td  class="pokemon name">Nidoran♂</td>
+                <td  class="False">Nidoran♂</td>
                 <td  class="poison">Poison</td>
-                <td  class=""></td>
-                <td  class="total">273</td>
+                <td  class="none">None</td>
                 <td  class="health0">46</td>
                 <td  class="attack1">57</td>
                 <td  class="defense0">40</td>
                 <td  class="spatk0">40</td>
                 <td  class="spdef0">40</td>
                 <td  class="speed1">50</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/33.png" alt="Image of Nidorino"></td>
                 <td  class="pokemon number">33</td>
-                <td  class="pokemon name">Nidorino</td>
+                <td  class="False">Nidorino</td>
                 <td  class="poison">Poison</td>
-                <td  class=""></td>
-                <td  class="total">365</td>
+                <td  class="none">None</td>
                 <td  class="health1">61</td>
                 <td  class="attack2">72</td>
                 <td  class="defense1">57</td>
                 <td  class="spatk1">55</td>
                 <td  class="spdef1">55</td>
                 <td  class="speed1">65</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/34.png" alt="Image of Nidoking"></td>
                 <td  class="pokemon number">34</td>
-                <td  class="pokemon name">Nidoking</td>
+                <td  class="False">Nidoking</td>
                 <td  class="poison">Poison</td>
                 <td  class="ground">Ground</td>
-                <td  class="total">505</td>
                 <td  class="health1">81</td>
                 <td  class="attack3">102</td>
                 <td  class="defense2">77</td>
                 <td  class="spatk2">85</td>
                 <td  class="spdef2">75</td>
                 <td  class="speed2">85</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/35.png" alt="Image of Clefairy"></td>
                 <td  class="pokemon number">35</td>
-                <td  class="pokemon name">Clefairy</td>
+                <td  class="False">Clefairy</td>
                 <td  class="fairy">Fairy</td>
-                <td  class=""></td>
-                <td  class="total">323</td>
+                <td  class="none">None</td>
                 <td  class="health1">70</td>
                 <td  class="attack1">45</td>
                 <td  class="defense1">48</td>
                 <td  class="spatk1">60</td>
                 <td  class="spdef1">65</td>
                 <td  class="speed0">35</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/36.png" alt="Image of Clefable"></td>
                 <td  class="pokemon number">36</td>
-                <td  class="pokemon name">Clefable</td>
+                <td  class="False">Clefable</td>
                 <td  class="fairy">Fairy</td>
-                <td  class=""></td>
-                <td  class="total">483</td>
+                <td  class="none">None</td>
                 <td  class="health1">95</td>
                 <td  class="attack2">70</td>
                 <td  class="defense1">73</td>
                 <td  class="spatk2">95</td>
                 <td  class="spdef2">90</td>
                 <td  class="speed1">60</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/37.png" alt="Image of Vulpix"></td>
                 <td  class="pokemon number">37</td>
-                <td  class="pokemon name">Vulpix</td>
+                <td  class="False">Vulpix</td>
                 <td  class="fire">Fire</td>
-                <td  class=""></td>
-                <td  class="total">299</td>
+                <td  class="none">None</td>
                 <td  class="health0">38</td>
                 <td  class="attack1">41</td>
                 <td  class="defense0">40</td>
                 <td  class="spatk1">50</td>
                 <td  class="spdef1">65</td>
                 <td  class="speed1">65</td>
-                <td  class="genby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/38.png" alt="Image of Ninetales"></td>
                 <td  class="pokemon number">38</td>
-                <td  class="pokemon name">Ninetales</td>
+                <td  class="False">Ninetales</td>
                 <td  class="fire">Fire</td>
-                <td  class=""></td>
-                <td  class="total">505</td>
+                <td  class="none">None</td>
                 <td  class="health1">73</td>
                 <td  class="attack2">76</td>
                 <td  class="defense1">75</td>
                 <td  class="spatk2">81</td>
                 <td  class="spdef3">100</td>
                 <td  class="speed3">100</td>
-                <td  class="genby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/39.png" alt="Image of Jigglypuff"></td>
                 <td  class="pokemon number">39</td>
-                <td  class="pokemon name">Jigglypuff</td>
+                <td  class="False">Jigglypuff</td>
                 <td  class="normal">Normal</td>
                 <td  class="fairy">Fairy</td>
-                <td  class="total">270</td>
                 <td  class="health2">115</td>
                 <td  class="attack1">45</td>
                 <td  class="defense0">20</td>
                 <td  class="spatk0">45</td>
                 <td  class="spdef0">25</td>
                 <td  class="speed0">20</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/40.png" alt="Image of Wigglytuff"></td>
                 <td  class="pokemon number">40</td>
-                <td  class="pokemon name">Wigglytuff</td>
+                <td  class="False">Wigglytuff</td>
                 <td  class="normal">Normal</td>
                 <td  class="fairy">Fairy</td>
-                <td  class="total">435</td>
                 <td  class="health2">140</td>
                 <td  class="attack2">70</td>
                 <td  class="defense1">45</td>
                 <td  class="spatk2">85</td>
                 <td  class="spdef1">50</td>
                 <td  class="speed1">45</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/41.png" alt="Image of Zubat"></td>
                 <td  class="pokemon number">41</td>
-                <td  class="pokemon name">Zubat</td>
+                <td  class="False">Zubat</td>
                 <td  class="poison">Poison</td>
                 <td  class="flying">Flying</td>
-                <td  class="total">245</td>
                 <td  class="health0">40</td>
                 <td  class="attack1">45</td>
                 <td  class="defense0">35</td>
                 <td  class="spatk0">30</td>
                 <td  class="spdef0">40</td>
                 <td  class="speed1">55</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/42.png" alt="Image of Golbat"></td>
                 <td  class="pokemon number">42</td>
-                <td  class="pokemon name">Golbat</td>
+                <td  class="False">Golbat</td>
                 <td  class="poison">Poison</td>
                 <td  class="flying">Flying</td>
-                <td  class="total">455</td>
                 <td  class="health1">75</td>
                 <td  class="attack2">80</td>
                 <td  class="defense1">70</td>
                 <td  class="spatk1">65</td>
                 <td  class="spdef2">75</td>
                 <td  class="speed2">90</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/43.png" alt="Image of Oddish"></td>
                 <td  class="pokemon number">43</td>
-                <td  class="pokemon name">Oddish</td>
+                <td  class="False">Oddish</td>
                 <td  class="grass">Grass</td>
                 <td  class="poison">Poison</td>
-                <td  class="total">320</td>
                 <td  class="health0">45</td>
                 <td  class="attack1">50</td>
                 <td  class="defense1">55</td>
                 <td  class="spatk1">75</td>
                 <td  class="spdef1">65</td>
                 <td  class="speed0">30</td>
-                <td  class="genry">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genry"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/44.png" alt="Image of Gloom"></td>
                 <td  class="pokemon number">44</td>
-                <td  class="pokemon name">Gloom</td>
+                <td  class="False">Gloom</td>
                 <td  class="grass">Grass</td>
                 <td  class="poison">Poison</td>
-                <td  class="total">395</td>
                 <td  class="health1">60</td>
                 <td  class="attack2">65</td>
                 <td  class="defense1">70</td>
                 <td  class="spatk2">85</td>
                 <td  class="spdef2">75</td>
                 <td  class="speed0">40</td>
-                <td  class="genry">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genry"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/45.png" alt="Image of Vileplume"></td>
                 <td  class="pokemon number">45</td>
-                <td  class="pokemon name">Vileplume</td>
+                <td  class="False">Vileplume</td>
                 <td  class="grass">Grass</td>
                 <td  class="poison">Poison</td>
-                <td  class="total">490</td>
                 <td  class="health1">75</td>
                 <td  class="attack2">80</td>
                 <td  class="defense2">85</td>
                 <td  class="spatk3">110</td>
                 <td  class="spdef2">90</td>
                 <td  class="speed1">50</td>
-                <td  class="genry">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genry"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/46.png" alt="Image of Paras"></td>
                 <td  class="pokemon number">46</td>
-                <td  class="pokemon name">Paras</td>
+                <td  class="False">Paras</td>
                 <td  class="bug">Bug</td>
                 <td  class="grass">Grass</td>
-                <td  class="total">285</td>
                 <td  class="health0">35</td>
                 <td  class="attack2">70</td>
                 <td  class="defense1">55</td>
                 <td  class="spatk0">45</td>
                 <td  class="spdef1">55</td>
                 <td  class="speed0">25</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/47.png" alt="Image of Parasect"></td>
                 <td  class="pokemon number">47</td>
-                <td  class="pokemon name">Parasect</td>
+                <td  class="False">Parasect</td>
                 <td  class="bug">Bug</td>
                 <td  class="grass">Grass</td>
-                <td  class="total">405</td>
                 <td  class="health1">60</td>
                 <td  class="attack3">95</td>
                 <td  class="defense2">80</td>
                 <td  class="spatk1">60</td>
                 <td  class="spdef2">80</td>
                 <td  class="speed0">30</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/48.png" alt="Image of Venonat"></td>
                 <td  class="pokemon number">48</td>
-                <td  class="pokemon name">Venonat</td>
+                <td  class="False">Venonat</td>
                 <td  class="bug">Bug</td>
                 <td  class="poison">Poison</td>
-                <td  class="total">305</td>
                 <td  class="health1">60</td>
                 <td  class="attack1">55</td>
                 <td  class="defense1">50</td>
                 <td  class="spatk0">40</td>
                 <td  class="spdef1">55</td>
                 <td  class="speed1">45</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/49.png" alt="Image of Venomoth"></td>
                 <td  class="pokemon number">49</td>
-                <td  class="pokemon name">Venomoth</td>
+                <td  class="False">Venomoth</td>
                 <td  class="bug">Bug</td>
                 <td  class="poison">Poison</td>
-                <td  class="total">450</td>
                 <td  class="health1">70</td>
                 <td  class="attack2">65</td>
                 <td  class="defense1">60</td>
                 <td  class="spatk2">90</td>
                 <td  class="spdef2">75</td>
                 <td  class="speed2">90</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/50.png" alt="Image of Diglett"></td>
                 <td  class="pokemon number">50</td>
-                <td  class="pokemon name">Diglett</td>
+                <td  class="False">Diglett</td>
                 <td  class="ground">Ground</td>
-                <td  class=""></td>
-                <td  class="total">265</td>
+                <td  class="none">None</td>
                 <td  class="health0">10</td>
                 <td  class="attack1">55</td>
                 <td  class="defense0">25</td>
                 <td  class="spatk0">35</td>
                 <td  class="spdef1">45</td>
                 <td  class="speed2">95</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/51.png" alt="Image of Dugtrio"></td>
                 <td  class="pokemon number">51</td>
-                <td  class="pokemon name">Dugtrio</td>
+                <td  class="False">Dugtrio</td>
                 <td  class="ground">Ground</td>
-                <td  class=""></td>
-                <td  class="total">405</td>
+                <td  class="none">None</td>
                 <td  class="health0">35</td>
                 <td  class="attack2">80</td>
                 <td  class="defense1">50</td>
                 <td  class="spatk1">50</td>
                 <td  class="spdef2">70</td>
                 <td  class="speed3">120</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/52.png" alt="Image of Meowth"></td>
                 <td  class="pokemon number">52</td>
-                <td  class="pokemon name">Meowth</td>
+                <td  class="False">Meowth</td>
                 <td  class="normal">Normal</td>
-                <td  class=""></td>
-                <td  class="total">290</td>
+                <td  class="none">None</td>
                 <td  class="health0">40</td>
                 <td  class="attack1">45</td>
                 <td  class="defense0">35</td>
                 <td  class="spatk0">40</td>
                 <td  class="spdef0">40</td>
                 <td  class="speed2">90</td>
-                <td  class="genb">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genb"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/53.png" alt="Image of Persian"></td>
                 <td  class="pokemon number">53</td>
-                <td  class="pokemon name">Persian</td>
+                <td  class="False">Persian</td>
                 <td  class="normal">Normal</td>
-                <td  class=""></td>
-                <td  class="total">440</td>
+                <td  class="none">None</td>
                 <td  class="health1">65</td>
                 <td  class="attack2">70</td>
                 <td  class="defense1">60</td>
                 <td  class="spatk1">65</td>
                 <td  class="spdef1">65</td>
                 <td  class="speed3">115</td>
-                <td  class="genb">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genb"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/54.png" alt="Image of Psyduck"></td>
                 <td  class="pokemon number">54</td>
-                <td  class="pokemon name">Psyduck</td>
+                <td  class="False">Psyduck</td>
                 <td  class="water">Water</td>
-                <td  class=""></td>
-                <td  class="total">320</td>
+                <td  class="none">None</td>
                 <td  class="health0">50</td>
                 <td  class="attack1">52</td>
                 <td  class="defense1">48</td>
                 <td  class="spatk1">65</td>
                 <td  class="spdef1">50</td>
                 <td  class="speed1">55</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/55.png" alt="Image of Golduck"></td>
                 <td  class="pokemon number">55</td>
-                <td  class="pokemon name">Golduck</td>
+                <td  class="False">Golduck</td>
                 <td  class="water">Water</td>
-                <td  class=""></td>
-                <td  class="total">500</td>
+                <td  class="none">None</td>
                 <td  class="health1">80</td>
                 <td  class="attack2">82</td>
                 <td  class="defense2">78</td>
                 <td  class="spatk2">95</td>
                 <td  class="spdef2">80</td>
                 <td  class="speed2">85</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/56.png" alt="Image of Mankey"></td>
                 <td  class="pokemon number">56</td>
-                <td  class="pokemon name">Mankey</td>
+                <td  class="False">Mankey</td>
                 <td  class="fighting">Fighting</td>
-                <td  class=""></td>
-                <td  class="total">305</td>
+                <td  class="none">None</td>
                 <td  class="health0">40</td>
                 <td  class="attack2">80</td>
                 <td  class="defense0">35</td>
                 <td  class="spatk0">35</td>
                 <td  class="spdef1">45</td>
                 <td  class="speed1">70</td>
-                <td  class="genry">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genry"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/57.png" alt="Image of Primeape"></td>
                 <td  class="pokemon number">57</td>
-                <td  class="pokemon name">Primeape</td>
+                <td  class="False">Primeape</td>
                 <td  class="fighting">Fighting</td>
-                <td  class=""></td>
-                <td  class="total">455</td>
+                <td  class="none">None</td>
                 <td  class="health1">65</td>
                 <td  class="attack3">105</td>
                 <td  class="defense1">60</td>
                 <td  class="spatk1">60</td>
                 <td  class="spdef2">70</td>
                 <td  class="speed2">95</td>
-                <td  class="genry">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genry"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/58.png" alt="Image of Growlithe"></td>
                 <td  class="pokemon number">58</td>
-                <td  class="pokemon name">Growlithe</td>
+                <td  class="False">Growlithe</td>
                 <td  class="fire">Fire</td>
-                <td  class=""></td>
-                <td  class="total">350</td>
+                <td  class="none">None</td>
                 <td  class="health0">55</td>
                 <td  class="attack2">70</td>
                 <td  class="defense1">45</td>
                 <td  class="spatk1">70</td>
                 <td  class="spdef1">50</td>
                 <td  class="speed1">60</td>
-                <td  class="genry">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genry"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/59.png" alt="Image of Arcanine"></td>
                 <td  class="pokemon number">59</td>
-                <td  class="pokemon name">Arcanine</td>
+                <td  class="False">Arcanine</td>
                 <td  class="fire">Fire</td>
-                <td  class=""></td>
-                <td  class="total">555</td>
+                <td  class="none">None</td>
                 <td  class="health1">90</td>
                 <td  class="attack3">110</td>
                 <td  class="defense2">80</td>
                 <td  class="spatk2">100</td>
                 <td  class="spdef2">80</td>
                 <td  class="speed2">95</td>
-                <td  class="genry">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genry"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/60.png" alt="Image of Poliwag"></td>
                 <td  class="pokemon number">60</td>
-                <td  class="pokemon name">Poliwag</td>
+                <td  class="False">Poliwag</td>
                 <td  class="water">Water</td>
-                <td  class=""></td>
-                <td  class="total">300</td>
+                <td  class="none">None</td>
                 <td  class="health0">40</td>
                 <td  class="attack1">50</td>
                 <td  class="defense0">40</td>
                 <td  class="spatk0">40</td>
                 <td  class="spdef0">40</td>
                 <td  class="speed2">90</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/61.png" alt="Image of Poliwhirl"></td>
                 <td  class="pokemon number">61</td>
-                <td  class="pokemon name">Poliwhirl</td>
+                <td  class="False">Poliwhirl</td>
                 <td  class="water">Water</td>
-                <td  class=""></td>
-                <td  class="total">385</td>
+                <td  class="none">None</td>
                 <td  class="health1">65</td>
                 <td  class="attack2">65</td>
                 <td  class="defense1">65</td>
                 <td  class="spatk1">50</td>
                 <td  class="spdef1">50</td>
                 <td  class="speed2">90</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/62.png" alt="Image of Poliwrath"></td>
                 <td  class="pokemon number">62</td>
-                <td  class="pokemon name">Poliwrath</td>
+                <td  class="False">Poliwrath</td>
                 <td  class="water">Water</td>
                 <td  class="fighting">Fighting</td>
-                <td  class="total">510</td>
                 <td  class="health1">90</td>
                 <td  class="attack3">95</td>
                 <td  class="defense2">95</td>
                 <td  class="spatk1">70</td>
                 <td  class="spdef2">90</td>
                 <td  class="speed1">70</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/63.png" alt="Image of Abra"></td>
                 <td  class="pokemon number">63</td>
-                <td  class="pokemon name">Abra</td>
+                <td  class="False">Abra</td>
                 <td  class="psychic">Psychic</td>
-                <td  class=""></td>
-                <td  class="total">310</td>
+                <td  class="none">None</td>
                 <td  class="health0">25</td>
                 <td  class="attack0">20</td>
                 <td  class="defense0">15</td>
                 <td  class="spatk2">105</td>
                 <td  class="spdef1">55</td>
                 <td  class="speed2">90</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/64.png" alt="Image of Kadabra"></td>
                 <td  class="pokemon number">64</td>
-                <td  class="pokemon name">Kadabra</td>
+                <td  class="False">Kadabra</td>
                 <td  class="psychic">Psychic</td>
-                <td  class=""></td>
-                <td  class="total">400</td>
+                <td  class="none">None</td>
                 <td  class="health0">40</td>
                 <td  class="attack1">35</td>
                 <td  class="defense0">30</td>
                 <td  class="spatk3">120</td>
                 <td  class="spdef2">70</td>
                 <td  class="speed3">105</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/65.png" alt="Image of Alakazam"></td>
                 <td  class="pokemon number">65</td>
-                <td  class="pokemon name">Alakazam</td>
+                <td  class="False">Alakazam</td>
                 <td  class="psychic">Psychic</td>
-                <td  class=""></td>
-                <td  class="total">500</td>
+                <td  class="none">None</td>
                 <td  class="health0">55</td>
                 <td  class="attack1">50</td>
                 <td  class="defense1">45</td>
                 <td  class="spatk3">135</td>
                 <td  class="spdef3">95</td>
                 <td  class="speed3">120</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/66.png" alt="Image of Machop"></td>
                 <td  class="pokemon number">66</td>
-                <td  class="pokemon name">Machop</td>
+                <td  class="False">Machop</td>
                 <td  class="fighting">Fighting</td>
-                <td  class=""></td>
-                <td  class="total">305</td>
+                <td  class="none">None</td>
                 <td  class="health1">70</td>
                 <td  class="attack2">80</td>
                 <td  class="defense1">50</td>
                 <td  class="spatk0">35</td>
                 <td  class="spdef0">35</td>
                 <td  class="speed0">35</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/67.png" alt="Image of Machoke"></td>
                 <td  class="pokemon number">67</td>
-                <td  class="pokemon name">Machoke</td>
+                <td  class="False">Machoke</td>
                 <td  class="fighting">Fighting</td>
-                <td  class=""></td>
-                <td  class="total">405</td>
+                <td  class="none">None</td>
                 <td  class="health1">80</td>
                 <td  class="attack3">100</td>
                 <td  class="defense1">70</td>
                 <td  class="spatk1">50</td>
                 <td  class="spdef1">60</td>
                 <td  class="speed1">45</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/68.png" alt="Image of Machamp"></td>
                 <td  class="pokemon number">68</td>
-                <td  class="pokemon name">Machamp</td>
+                <td  class="False">Machamp</td>
                 <td  class="fighting">Fighting</td>
-                <td  class=""></td>
-                <td  class="total">505</td>
+                <td  class="none">None</td>
                 <td  class="health1">90</td>
                 <td  class="attack4">130</td>
                 <td  class="defense2">80</td>
                 <td  class="spatk1">65</td>
                 <td  class="spdef2">85</td>
                 <td  class="speed1">55</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/69.png" alt="Image of Bellsprout"></td>
                 <td  class="pokemon number">69</td>
-                <td  class="pokemon name">Bellsprout</td>
+                <td  class="False">Bellsprout</td>
                 <td  class="grass">Grass</td>
                 <td  class="poison">Poison</td>
-                <td  class="total">300</td>
                 <td  class="health0">50</td>
                 <td  class="attack2">75</td>
                 <td  class="defense0">35</td>
                 <td  class="spatk1">70</td>
                 <td  class="spdef0">30</td>
                 <td  class="speed0">40</td>
-                <td  class="genby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/70.png" alt="Image of Weepinbell"></td>
                 <td  class="pokemon number">70</td>
-                <td  class="pokemon name">Weepinbell</td>
+                <td  class="False">Weepinbell</td>
                 <td  class="grass">Grass</td>
                 <td  class="poison">Poison</td>
-                <td  class="total">390</td>
                 <td  class="health1">65</td>
                 <td  class="attack3">90</td>
                 <td  class="defense1">50</td>
                 <td  class="spatk2">85</td>
                 <td  class="spdef1">45</td>
                 <td  class="speed1">55</td>
-                <td  class="genby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/71.png" alt="Image of Victreebel"></td>
                 <td  class="pokemon number">71</td>
-                <td  class="pokemon name">Victreebel</td>
+                <td  class="False">Victreebel</td>
                 <td  class="grass">Grass</td>
                 <td  class="poison">Poison</td>
-                <td  class="total">490</td>
                 <td  class="health1">80</td>
                 <td  class="attack3">105</td>
                 <td  class="defense1">65</td>
                 <td  class="spatk2">100</td>
                 <td  class="spdef2">70</td>
                 <td  class="speed1">70</td>
-                <td  class="genby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/72.png" alt="Image of Tentacool"></td>
                 <td  class="pokemon number">72</td>
-                <td  class="pokemon name">Tentacool</td>
+                <td  class="False">Tentacool</td>
                 <td  class="water">Water</td>
                 <td  class="poison">Poison</td>
-                <td  class="total">335</td>
                 <td  class="health0">40</td>
                 <td  class="attack1">40</td>
                 <td  class="defense0">35</td>
                 <td  class="spatk1">50</td>
                 <td  class="spdef3">100</td>
                 <td  class="speed1">70</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/73.png" alt="Image of Tentacruel"></td>
                 <td  class="pokemon number">73</td>
-                <td  class="pokemon name">Tentacruel</td>
+                <td  class="False">Tentacruel</td>
                 <td  class="water">Water</td>
                 <td  class="poison">Poison</td>
-                <td  class="total">515</td>
                 <td  class="health1">80</td>
                 <td  class="attack2">70</td>
                 <td  class="defense1">65</td>
                 <td  class="spatk2">80</td>
                 <td  class="spdef4">120</td>
                 <td  class="speed3">100</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/74.png" alt="Image of Geodude"></td>
                 <td  class="pokemon number">74</td>
-                <td  class="pokemon name">Geodude</td>
+                <td  class="False">Geodude</td>
                 <td  class="rock">Rock</td>
                 <td  class="ground">Ground</td>
-                <td  class="total">300</td>
                 <td  class="health0">40</td>
                 <td  class="attack2">80</td>
                 <td  class="defense2">100</td>
                 <td  class="spatk0">30</td>
                 <td  class="spdef0">30</td>
                 <td  class="speed0">20</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/75.png" alt="Image of Graveler"></td>
                 <td  class="pokemon number">75</td>
-                <td  class="pokemon name">Graveler</td>
+                <td  class="False">Graveler</td>
                 <td  class="rock">Rock</td>
                 <td  class="ground">Ground</td>
-                <td  class="total">390</td>
                 <td  class="health0">55</td>
                 <td  class="attack3">95</td>
                 <td  class="defense3">115</td>
                 <td  class="spatk0">45</td>
                 <td  class="spdef1">45</td>
                 <td  class="speed0">35</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/76.png" alt="Image of Golem"></td>
                 <td  class="pokemon number">76</td>
-                <td  class="pokemon name">Golem</td>
+                <td  class="False">Golem</td>
                 <td  class="rock">Rock</td>
                 <td  class="ground">Ground</td>
-                <td  class="total">495</td>
                 <td  class="health1">80</td>
                 <td  class="attack4">120</td>
                 <td  class="defense3">130</td>
                 <td  class="spatk1">55</td>
                 <td  class="spdef1">65</td>
                 <td  class="speed1">45</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/77.png" alt="Image of Ponyta"></td>
                 <td  class="pokemon number">77</td>
-                <td  class="pokemon name">Ponyta</td>
+                <td  class="False">Ponyta</td>
                 <td  class="fire">Fire</td>
-                <td  class=""></td>
-                <td  class="total">410</td>
+                <td  class="none">None</td>
                 <td  class="health0">50</td>
                 <td  class="attack2">85</td>
                 <td  class="defense1">55</td>
                 <td  class="spatk1">65</td>
                 <td  class="spdef1">65</td>
                 <td  class="speed2">90</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/78.png" alt="Image of Rapidash"></td>
                 <td  class="pokemon number">78</td>
-                <td  class="pokemon name">Rapidash</td>
+                <td  class="False">Rapidash</td>
                 <td  class="fire">Fire</td>
-                <td  class=""></td>
-                <td  class="total">500</td>
+                <td  class="none">None</td>
                 <td  class="health1">65</td>
                 <td  class="attack3">100</td>
                 <td  class="defense1">70</td>
                 <td  class="spatk2">80</td>
                 <td  class="spdef2">80</td>
                 <td  class="speed3">105</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/79.png" alt="Image of Slowpoke"></td>
                 <td  class="pokemon number">79</td>
-                <td  class="pokemon name">Slowpoke</td>
+                <td  class="False">Slowpoke</td>
                 <td  class="water">Water</td>
                 <td  class="psychic">Psychic</td>
-                <td  class="total">315</td>
                 <td  class="health1">90</td>
                 <td  class="attack2">65</td>
                 <td  class="defense1">65</td>
                 <td  class="spatk0">40</td>
                 <td  class="spdef0">40</td>
                 <td  class="speed0">15</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/80.png" alt="Image of Slowbro"></td>
                 <td  class="pokemon number">80</td>
-                <td  class="pokemon name">Slowbro</td>
+                <td  class="False">Slowbro</td>
                 <td  class="water">Water</td>
                 <td  class="psychic">Psychic</td>
-                <td  class="total">490</td>
                 <td  class="health1">95</td>
                 <td  class="attack2">75</td>
                 <td  class="defense2">110</td>
                 <td  class="spatk2">100</td>
                 <td  class="spdef2">80</td>
                 <td  class="speed0">30</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/81.png" alt="Image of Magnemite"></td>
                 <td  class="pokemon number">81</td>
-                <td  class="pokemon name">Magnemite</td>
+                <td  class="False">Magnemite</td>
                 <td  class="electric">Electric</td>
                 <td  class="steel">Steel</td>
-                <td  class="total">325</td>
                 <td  class="health0">25</td>
                 <td  class="attack1">35</td>
                 <td  class="defense1">70</td>
                 <td  class="spatk2">95</td>
                 <td  class="spdef1">55</td>
                 <td  class="speed1">45</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/82.png" alt="Image of Magneton"></td>
                 <td  class="pokemon number">82</td>
-                <td  class="pokemon name">Magneton</td>
+                <td  class="False">Magneton</td>
                 <td  class="electric">Electric</td>
                 <td  class="steel">Steel</td>
-                <td  class="total">465</td>
                 <td  class="health0">50</td>
                 <td  class="attack2">60</td>
                 <td  class="defense2">95</td>
                 <td  class="spatk3">120</td>
                 <td  class="spdef2">70</td>
                 <td  class="speed1">70</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/83.png" alt="Image of Farfetch'd"></td>
                 <td  class="pokemon number">83</td>
-                <td  class="pokemon name">Farfetch'd</td>
+                <td  class="False">Farfetch'd</td>
                 <td  class="normal">Normal</td>
                 <td  class="flying">Flying</td>
-                <td  class="total">352</td>
                 <td  class="health0">52</td>
                 <td  class="attack2">65</td>
                 <td  class="defense1">55</td>
                 <td  class="spatk1">58</td>
                 <td  class="spdef1">62</td>
                 <td  class="speed1">60</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/84.png" alt="Image of Doduo"></td>
                 <td  class="pokemon number">84</td>
-                <td  class="pokemon name">Doduo</td>
+                <td  class="False">Doduo</td>
                 <td  class="normal">Normal</td>
                 <td  class="flying">Flying</td>
-                <td  class="total">310</td>
                 <td  class="health0">35</td>
                 <td  class="attack2">85</td>
                 <td  class="defense1">45</td>
                 <td  class="spatk0">35</td>
                 <td  class="spdef0">35</td>
                 <td  class="speed2">75</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/85.png" alt="Image of Dodrio"></td>
                 <td  class="pokemon number">85</td>
-                <td  class="pokemon name">Dodrio</td>
+                <td  class="False">Dodrio</td>
                 <td  class="normal">Normal</td>
                 <td  class="flying">Flying</td>
-                <td  class="total">460</td>
                 <td  class="health1">60</td>
                 <td  class="attack3">110</td>
                 <td  class="defense1">70</td>
                 <td  class="spatk1">60</td>
                 <td  class="spdef1">60</td>
                 <td  class="speed3">100</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/86.png" alt="Image of Seel"></td>
                 <td  class="pokemon number">86</td>
-                <td  class="pokemon name">Seel</td>
+                <td  class="False">Seel</td>
                 <td  class="water">Water</td>
-                <td  class=""></td>
-                <td  class="total">325</td>
+                <td  class="none">None</td>
                 <td  class="health1">65</td>
                 <td  class="attack1">45</td>
                 <td  class="defense1">55</td>
                 <td  class="spatk0">45</td>
                 <td  class="spdef2">70</td>
                 <td  class="speed1">45</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/87.png" alt="Image of Dewgong"></td>
                 <td  class="pokemon number">87</td>
-                <td  class="pokemon name">Dewgong</td>
+                <td  class="False">Dewgong</td>
                 <td  class="water">Water</td>
                 <td  class="ice">Ice</td>
-                <td  class="total">475</td>
                 <td  class="health1">90</td>
                 <td  class="attack2">70</td>
                 <td  class="defense2">80</td>
                 <td  class="spatk1">70</td>
                 <td  class="spdef3">95</td>
                 <td  class="speed1">70</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/88.png" alt="Image of Grimer"></td>
                 <td  class="pokemon number">88</td>
-                <td  class="pokemon name">Grimer</td>
+                <td  class="False">Grimer</td>
                 <td  class="poison">Poison</td>
-                <td  class=""></td>
-                <td  class="total">325</td>
+                <td  class="none">None</td>
                 <td  class="health1">80</td>
                 <td  class="attack2">80</td>
                 <td  class="defense1">50</td>
                 <td  class="spatk0">40</td>
                 <td  class="spdef1">50</td>
                 <td  class="speed0">25</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/89.png" alt="Image of Muk"></td>
                 <td  class="pokemon number">89</td>
-                <td  class="pokemon name">Muk</td>
+                <td  class="False">Muk</td>
                 <td  class="poison">Poison</td>
-                <td  class=""></td>
-                <td  class="total">500</td>
+                <td  class="none">None</td>
                 <td  class="health1">105</td>
                 <td  class="attack3">105</td>
                 <td  class="defense1">75</td>
                 <td  class="spatk1">65</td>
                 <td  class="spdef3">100</td>
                 <td  class="speed1">50</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/90.png" alt="Image of Shellder"></td>
                 <td  class="pokemon number">90</td>
-                <td  class="pokemon name">Shellder</td>
+                <td  class="False">Shellder</td>
                 <td  class="water">Water</td>
-                <td  class=""></td>
-                <td  class="total">305</td>
+                <td  class="none">None</td>
                 <td  class="health0">30</td>
                 <td  class="attack2">65</td>
                 <td  class="defense2">100</td>
                 <td  class="spatk0">45</td>
                 <td  class="spdef0">25</td>
                 <td  class="speed0">40</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/91.png" alt="Image of Cloyster"></td>
                 <td  class="pokemon number">91</td>
-                <td  class="pokemon name">Cloyster</td>
+                <td  class="False">Cloyster</td>
                 <td  class="water">Water</td>
                 <td  class="ice">Ice</td>
-                <td  class="total">525</td>
                 <td  class="health0">50</td>
                 <td  class="attack3">95</td>
                 <td  class="defense4">180</td>
                 <td  class="spatk2">85</td>
                 <td  class="spdef1">45</td>
                 <td  class="speed1">70</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/92.png" alt="Image of Gastly"></td>
                 <td  class="pokemon number">92</td>
-                <td  class="pokemon name">Gastly</td>
+                <td  class="False">Gastly</td>
                 <td  class="ghost">Ghost</td>
                 <td  class="poison">Poison</td>
-                <td  class="total">310</td>
                 <td  class="health0">30</td>
                 <td  class="attack1">35</td>
                 <td  class="defense0">30</td>
                 <td  class="spatk2">100</td>
                 <td  class="spdef0">35</td>
                 <td  class="speed2">80</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/93.png" alt="Image of Haunter"></td>
                 <td  class="pokemon number">93</td>
-                <td  class="pokemon name">Haunter</td>
+                <td  class="False">Haunter</td>
                 <td  class="ghost">Ghost</td>
                 <td  class="poison">Poison</td>
-                <td  class="total">405</td>
                 <td  class="health0">45</td>
                 <td  class="attack1">50</td>
                 <td  class="defense1">45</td>
                 <td  class="spatk3">115</td>
                 <td  class="spdef1">55</td>
                 <td  class="speed2">95</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/94.png" alt="Image of Gengar"></td>
                 <td  class="pokemon number">94</td>
-                <td  class="pokemon name">Gengar</td>
+                <td  class="False">Gengar</td>
                 <td  class="ghost">Ghost</td>
                 <td  class="poison">Poison</td>
-                <td  class="total">500</td>
                 <td  class="health1">60</td>
                 <td  class="attack2">65</td>
                 <td  class="defense1">60</td>
                 <td  class="spatk3">130</td>
                 <td  class="spdef2">75</td>
                 <td  class="speed3">110</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/95.png" alt="Image of Onix"></td>
                 <td  class="pokemon number">95</td>
-                <td  class="pokemon name">Onix</td>
+                <td  class="False">Onix</td>
                 <td  class="rock">Rock</td>
                 <td  class="ground">Ground</td>
-                <td  class="total">385</td>
                 <td  class="health0">35</td>
                 <td  class="attack1">45</td>
                 <td  class="defense4">160</td>
                 <td  class="spatk0">30</td>
                 <td  class="spdef1">45</td>
                 <td  class="speed1">70</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/96.png" alt="Image of Drowzee"></td>
                 <td  class="pokemon number">96</td>
-                <td  class="pokemon name">Drowzee</td>
+                <td  class="False">Drowzee</td>
                 <td  class="psychic">Psychic</td>
-                <td  class=""></td>
-                <td  class="total">328</td>
+                <td  class="none">None</td>
                 <td  class="health1">60</td>
                 <td  class="attack1">48</td>
                 <td  class="defense1">45</td>
                 <td  class="spatk0">43</td>
                 <td  class="spdef2">90</td>
                 <td  class="speed0">42</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/97.png" alt="Image of Hypno"></td>
                 <td  class="pokemon number">97</td>
-                <td  class="pokemon name">Hypno</td>
+                <td  class="False">Hypno</td>
                 <td  class="psychic">Psychic</td>
-                <td  class=""></td>
-                <td  class="total">483</td>
+                <td  class="none">None</td>
                 <td  class="health1">85</td>
                 <td  class="attack2">73</td>
                 <td  class="defense1">70</td>
                 <td  class="spatk1">73</td>
                 <td  class="spdef3">115</td>
                 <td  class="speed1">67</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/98.png" alt="Image of Krabby"></td>
                 <td  class="pokemon number">98</td>
-                <td  class="pokemon name">Krabby</td>
+                <td  class="False">Krabby</td>
                 <td  class="water">Water</td>
-                <td  class=""></td>
-                <td  class="total">325</td>
+                <td  class="none">None</td>
                 <td  class="health0">30</td>
                 <td  class="attack3">105</td>
                 <td  class="defense2">90</td>
                 <td  class="spatk0">25</td>
                 <td  class="spdef0">25</td>
                 <td  class="speed1">50</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/99.png" alt="Image of Kingler"></td>
                 <td  class="pokemon number">99</td>
-                <td  class="pokemon name">Kingler</td>
+                <td  class="False">Kingler</td>
                 <td  class="water">Water</td>
-                <td  class=""></td>
-                <td  class="total">475</td>
+                <td  class="none">None</td>
                 <td  class="health0">55</td>
                 <td  class="attack4">130</td>
                 <td  class="defense3">115</td>
                 <td  class="spatk1">50</td>
                 <td  class="spdef1">50</td>
                 <td  class="speed2">75</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/100.png" alt="Image of Voltorb"></td>
                 <td  class="pokemon number">100</td>
-                <td  class="pokemon name">Voltorb</td>
+                <td  class="False">Voltorb</td>
                 <td  class="electric">Electric</td>
-                <td  class=""></td>
-                <td  class="total">330</td>
+                <td  class="none">None</td>
                 <td  class="health0">40</td>
                 <td  class="attack0">30</td>
                 <td  class="defense1">50</td>
                 <td  class="spatk1">55</td>
                 <td  class="spdef1">55</td>
                 <td  class="speed3">100</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/101.png" alt="Image of Electrode"></td>
                 <td  class="pokemon number">101</td>
-                <td  class="pokemon name">Electrode</td>
+                <td  class="False">Electrode</td>
                 <td  class="electric">Electric</td>
-                <td  class=""></td>
-                <td  class="total">480</td>
+                <td  class="none">None</td>
                 <td  class="health1">60</td>
                 <td  class="attack1">50</td>
                 <td  class="defense1">70</td>
                 <td  class="spatk2">80</td>
                 <td  class="spdef2">80</td>
                 <td  class="speed4">140</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/102.png" alt="Image of Exeggcute"></td>
                 <td  class="pokemon number">102</td>
-                <td  class="pokemon name">Exeggcute</td>
+                <td  class="False">Exeggcute</td>
                 <td  class="grass">Grass</td>
                 <td  class="psychic">Psychic</td>
-                <td  class="total">325</td>
                 <td  class="health1">60</td>
                 <td  class="attack1">40</td>
                 <td  class="defense2">80</td>
                 <td  class="spatk1">60</td>
                 <td  class="spdef1">45</td>
                 <td  class="speed0">40</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/103.png" alt="Image of Exeggutor"></td>
                 <td  class="pokemon number">103</td>
-                <td  class="pokemon name">Exeggutor</td>
+                <td  class="False">Exeggutor</td>
                 <td  class="grass">Grass</td>
                 <td  class="psychic">Psychic</td>
-                <td  class="total">520</td>
                 <td  class="health1">95</td>
                 <td  class="attack3">95</td>
                 <td  class="defense2">85</td>
                 <td  class="spatk3">125</td>
                 <td  class="spdef1">65</td>
                 <td  class="speed1">55</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/104.png" alt="Image of Cubone"></td>
                 <td  class="pokemon number">104</td>
-                <td  class="pokemon name">Cubone</td>
+                <td  class="False">Cubone</td>
                 <td  class="ground">Ground</td>
-                <td  class=""></td>
-                <td  class="total">320</td>
+                <td  class="none">None</td>
                 <td  class="health0">50</td>
                 <td  class="attack1">50</td>
                 <td  class="defense2">95</td>
                 <td  class="spatk0">40</td>
                 <td  class="spdef1">50</td>
                 <td  class="speed0">35</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/105.png" alt="Image of Marowak"></td>
                 <td  class="pokemon number">105</td>
-                <td  class="pokemon name">Marowak</td>
+                <td  class="False">Marowak</td>
                 <td  class="ground">Ground</td>
-                <td  class=""></td>
-                <td  class="total">425</td>
+                <td  class="none">None</td>
                 <td  class="health1">60</td>
                 <td  class="attack2">80</td>
                 <td  class="defense2">110</td>
                 <td  class="spatk1">50</td>
                 <td  class="spdef2">80</td>
                 <td  class="speed1">45</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/106.png" alt="Image of Hitmonlee"></td>
                 <td  class="pokemon number">106</td>
-                <td  class="pokemon name">Hitmonlee</td>
+                <td  class="False">Hitmonlee</td>
                 <td  class="fighting">Fighting</td>
-                <td  class=""></td>
-                <td  class="total">455</td>
+                <td  class="none">None</td>
                 <td  class="health0">50</td>
                 <td  class="attack4">120</td>
                 <td  class="defense1">53</td>
                 <td  class="spatk0">35</td>
                 <td  class="spdef3">110</td>
                 <td  class="speed2">87</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/107.png" alt="Image of Hitmonchan"></td>
                 <td  class="pokemon number">107</td>
-                <td  class="pokemon name">Hitmonchan</td>
+                <td  class="False">Hitmonchan</td>
                 <td  class="fighting">Fighting</td>
-                <td  class=""></td>
-                <td  class="total">455</td>
+                <td  class="none">None</td>
                 <td  class="health0">50</td>
                 <td  class="attack3">105</td>
                 <td  class="defense2">79</td>
                 <td  class="spatk0">35</td>
                 <td  class="spdef3">110</td>
                 <td  class="speed2">76</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/108.png" alt="Image of Lickitung"></td>
                 <td  class="pokemon number">108</td>
-                <td  class="pokemon name">Lickitung</td>
+                <td  class="False">Lickitung</td>
                 <td  class="normal">Normal</td>
-                <td  class=""></td>
-                <td  class="total">385</td>
+                <td  class="none">None</td>
                 <td  class="health1">90</td>
                 <td  class="attack1">55</td>
                 <td  class="defense1">75</td>
                 <td  class="spatk1">60</td>
                 <td  class="spdef2">75</td>
                 <td  class="speed0">30</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/109.png" alt="Image of Koffing"></td>
                 <td  class="pokemon number">109</td>
-                <td  class="pokemon name">Koffing</td>
+                <td  class="False">Koffing</td>
                 <td  class="poison">Poison</td>
-                <td  class=""></td>
-                <td  class="total">340</td>
+                <td  class="none">None</td>
                 <td  class="health0">40</td>
                 <td  class="attack2">65</td>
                 <td  class="defense2">95</td>
                 <td  class="spatk1">60</td>
                 <td  class="spdef1">45</td>
                 <td  class="speed0">35</td>
-                <td  class="genrb">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrb"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/110.png" alt="Image of Weezing"></td>
                 <td  class="pokemon number">110</td>
-                <td  class="pokemon name">Weezing</td>
+                <td  class="False">Weezing</td>
                 <td  class="poison">Poison</td>
-                <td  class=""></td>
-                <td  class="total">490</td>
+                <td  class="none">None</td>
                 <td  class="health1">65</td>
                 <td  class="attack3">90</td>
                 <td  class="defense3">120</td>
                 <td  class="spatk2">85</td>
                 <td  class="spdef2">70</td>
                 <td  class="speed1">60</td>
-                <td  class="genrb">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrb"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/111.png" alt="Image of Rhyhorn"></td>
                 <td  class="pokemon number">111</td>
-                <td  class="pokemon name">Rhyhorn</td>
+                <td  class="False">Rhyhorn</td>
                 <td  class="ground">Ground</td>
                 <td  class="rock">Rock</td>
-                <td  class="total">345</td>
                 <td  class="health1">80</td>
                 <td  class="attack2">85</td>
                 <td  class="defense2">95</td>
                 <td  class="spatk0">30</td>
                 <td  class="spdef0">30</td>
                 <td  class="speed0">25</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/112.png" alt="Image of Rhydon"></td>
                 <td  class="pokemon number">112</td>
-                <td  class="pokemon name">Rhydon</td>
+                <td  class="False">Rhydon</td>
                 <td  class="ground">Ground</td>
                 <td  class="rock">Rock</td>
-                <td  class="total">485</td>
                 <td  class="health1">105</td>
                 <td  class="attack4">130</td>
                 <td  class="defense3">120</td>
                 <td  class="spatk0">45</td>
                 <td  class="spdef1">45</td>
                 <td  class="speed0">40</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/113.png" alt="Image of Chansey"></td>
                 <td  class="pokemon number">113</td>
-                <td  class="pokemon name">Chansey</td>
+                <td  class="False">Chansey</td>
                 <td  class="normal">Normal</td>
-                <td  class=""></td>
-                <td  class="total">450</td>
+                <td  class="none">None</td>
                 <td  class="health4">250</td>
                 <td  class="attack0">5</td>
                 <td  class="defense0">5</td>
                 <td  class="spatk0">35</td>
                 <td  class="spdef3">105</td>
                 <td  class="speed1">50</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/114.png" alt="Image of Tangela"></td>
                 <td  class="pokemon number">114</td>
-                <td  class="pokemon name">Tangela</td>
+                <td  class="False">Tangela</td>
                 <td  class="grass">Grass</td>
-                <td  class=""></td>
-                <td  class="total">435</td>
+                <td  class="none">None</td>
                 <td  class="health1">65</td>
                 <td  class="attack1">55</td>
                 <td  class="defense3">115</td>
                 <td  class="spatk2">100</td>
                 <td  class="spdef0">40</td>
                 <td  class="speed1">60</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/115.png" alt="Image of Kangaskhan"></td>
                 <td  class="pokemon number">115</td>
-                <td  class="pokemon name">Kangaskhan</td>
+                <td  class="False">Kangaskhan</td>
                 <td  class="normal">Normal</td>
-                <td  class=""></td>
-                <td  class="total">490</td>
+                <td  class="none">None</td>
                 <td  class="health1">105</td>
                 <td  class="attack3">95</td>
                 <td  class="defense2">80</td>
                 <td  class="spatk0">40</td>
                 <td  class="spdef2">80</td>
                 <td  class="speed2">90</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/116.png" alt="Image of Horsea"></td>
                 <td  class="pokemon number">116</td>
-                <td  class="pokemon name">Horsea</td>
+                <td  class="False">Horsea</td>
                 <td  class="water">Water</td>
-                <td  class=""></td>
-                <td  class="total">295</td>
+                <td  class="none">None</td>
                 <td  class="health0">30</td>
                 <td  class="attack1">40</td>
                 <td  class="defense1">70</td>
                 <td  class="spatk1">70</td>
                 <td  class="spdef0">25</td>
                 <td  class="speed1">60</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/117.png" alt="Image of Seadra"></td>
                 <td  class="pokemon number">117</td>
-                <td  class="pokemon name">Seadra</td>
+                <td  class="False">Seadra</td>
                 <td  class="water">Water</td>
-                <td  class=""></td>
-                <td  class="total">440</td>
+                <td  class="none">None</td>
                 <td  class="health0">55</td>
                 <td  class="attack2">65</td>
                 <td  class="defense2">95</td>
                 <td  class="spatk2">95</td>
                 <td  class="spdef1">45</td>
                 <td  class="speed2">85</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/118.png" alt="Image of Goldeen"></td>
                 <td  class="pokemon number">118</td>
-                <td  class="pokemon name">Goldeen</td>
+                <td  class="False">Goldeen</td>
                 <td  class="water">Water</td>
-                <td  class=""></td>
-                <td  class="total">320</td>
+                <td  class="none">None</td>
                 <td  class="health0">45</td>
                 <td  class="attack2">67</td>
                 <td  class="defense1">60</td>
                 <td  class="spatk0">35</td>
                 <td  class="spdef1">50</td>
                 <td  class="speed1">63</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/119.png" alt="Image of Seaking"></td>
                 <td  class="pokemon number">119</td>
-                <td  class="pokemon name">Seaking</td>
+                <td  class="False">Seaking</td>
                 <td  class="water">Water</td>
-                <td  class=""></td>
-                <td  class="total">450</td>
+                <td  class="none">None</td>
                 <td  class="health1">80</td>
                 <td  class="attack3">92</td>
                 <td  class="defense1">65</td>
                 <td  class="spatk1">65</td>
                 <td  class="spdef2">80</td>
                 <td  class="speed1">68</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/120.png" alt="Image of Staryu"></td>
                 <td  class="pokemon number">120</td>
-                <td  class="pokemon name">Staryu</td>
+                <td  class="False">Staryu</td>
                 <td  class="water">Water</td>
-                <td  class=""></td>
-                <td  class="total">340</td>
+                <td  class="none">None</td>
                 <td  class="health0">30</td>
                 <td  class="attack1">45</td>
                 <td  class="defense1">55</td>
                 <td  class="spatk1">70</td>
                 <td  class="spdef1">55</td>
                 <td  class="speed2">85</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/121.png" alt="Image of Starmie"></td>
                 <td  class="pokemon number">121</td>
-                <td  class="pokemon name">Starmie</td>
+                <td  class="False">Starmie</td>
                 <td  class="water">Water</td>
                 <td  class="psychic">Psychic</td>
-                <td  class="total">520</td>
                 <td  class="health1">60</td>
                 <td  class="attack2">75</td>
                 <td  class="defense2">85</td>
                 <td  class="spatk2">100</td>
                 <td  class="spdef2">85</td>
                 <td  class="speed3">115</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/122.png" alt="Image of Mr. Mime"></td>
                 <td  class="pokemon number">122</td>
-                <td  class="pokemon name">Mr. Mime</td>
+                <td  class="False">Mr. Mime</td>
                 <td  class="psychic">Psychic</td>
                 <td  class="fairy">Fairy</td>
-                <td  class="total">460</td>
                 <td  class="health0">40</td>
                 <td  class="attack1">45</td>
                 <td  class="defense1">65</td>
                 <td  class="spatk2">100</td>
                 <td  class="spdef4">120</td>
                 <td  class="speed2">90</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/123.png" alt="Image of Scyther"></td>
                 <td  class="pokemon number">123</td>
-                <td  class="pokemon name">Scyther</td>
+                <td  class="False">Scyther</td>
                 <td  class="bug">Bug</td>
                 <td  class="flying">Flying</td>
-                <td  class="total">500</td>
                 <td  class="health1">70</td>
                 <td  class="attack3">110</td>
                 <td  class="defense2">80</td>
                 <td  class="spatk1">55</td>
                 <td  class="spdef2">80</td>
                 <td  class="speed3">105</td>
-                <td  class="genry">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genry"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/124.png" alt="Image of Jynx"></td>
                 <td  class="pokemon number">124</td>
-                <td  class="pokemon name">Jynx</td>
+                <td  class="False">Jynx</td>
                 <td  class="ice">Ice</td>
                 <td  class="psychic">Psychic</td>
-                <td  class="total">455</td>
                 <td  class="health1">65</td>
                 <td  class="attack1">50</td>
                 <td  class="defense0">35</td>
                 <td  class="spatk3">115</td>
                 <td  class="spdef3">95</td>
                 <td  class="speed2">95</td>
-                <td  class="genrb">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrb"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/125.png" alt="Image of Electabuzz"></td>
                 <td  class="pokemon number">125</td>
-                <td  class="pokemon name">Electabuzz</td>
+                <td  class="False">Electabuzz</td>
                 <td  class="electric">Electric</td>
-                <td  class=""></td>
-                <td  class="total">490</td>
+                <td  class="none">None</td>
                 <td  class="health1">65</td>
                 <td  class="attack2">83</td>
                 <td  class="defense1">57</td>
                 <td  class="spatk2">95</td>
                 <td  class="spdef2">85</td>
                 <td  class="speed3">105</td>
-                <td  class="genr">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genr"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/126.png" alt="Image of Magmar"></td>
                 <td  class="pokemon number">126</td>
-                <td  class="pokemon name">Magmar</td>
+                <td  class="False">Magmar</td>
                 <td  class="fire">Fire</td>
-                <td  class=""></td>
-                <td  class="total">495</td>
+                <td  class="none">None</td>
                 <td  class="health1">65</td>
                 <td  class="attack3">95</td>
                 <td  class="defense1">57</td>
                 <td  class="spatk2">100</td>
                 <td  class="spdef2">85</td>
                 <td  class="speed2">93</td>
-                <td  class="genb">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genb"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/127.png" alt="Image of Pinsir"></td>
                 <td  class="pokemon number">127</td>
-                <td  class="pokemon name">Pinsir</td>
+                <td  class="False">Pinsir</td>
                 <td  class="bug">Bug</td>
-                <td  class=""></td>
-                <td  class="total">500</td>
+                <td  class="none">None</td>
                 <td  class="health1">65</td>
                 <td  class="attack4">125</td>
                 <td  class="defense2">100</td>
                 <td  class="spatk1">55</td>
                 <td  class="spdef2">70</td>
                 <td  class="speed2">85</td>
-                <td  class="genby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/128.png" alt="Image of Tauros"></td>
                 <td  class="pokemon number">128</td>
-                <td  class="pokemon name">Tauros</td>
+                <td  class="False">Tauros</td>
                 <td  class="normal">Normal</td>
-                <td  class=""></td>
-                <td  class="total">490</td>
+                <td  class="none">None</td>
                 <td  class="health1">75</td>
                 <td  class="attack3">100</td>
                 <td  class="defense2">95</td>
                 <td  class="spatk0">40</td>
                 <td  class="spdef2">70</td>
                 <td  class="speed3">110</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/129.png" alt="Image of Magikarp"></td>
                 <td  class="pokemon number">129</td>
-                <td  class="pokemon name">Magikarp</td>
+                <td  class="False">Magikarp</td>
                 <td  class="water">Water</td>
-                <td  class=""></td>
-                <td  class="total">200</td>
+                <td  class="none">None</td>
                 <td  class="health0">20</td>
                 <td  class="attack0">10</td>
                 <td  class="defense1">55</td>
                 <td  class="spatk0">15</td>
                 <td  class="spdef0">20</td>
                 <td  class="speed2">80</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/130.png" alt="Image of Gyarados"></td>
                 <td  class="pokemon number">130</td>
-                <td  class="pokemon name">Gyarados</td>
+                <td  class="False">Gyarados</td>
                 <td  class="water">Water</td>
                 <td  class="flying">Flying</td>
-                <td  class="total">540</td>
                 <td  class="health1">95</td>
                 <td  class="attack4">125</td>
                 <td  class="defense2">79</td>
                 <td  class="spatk1">60</td>
                 <td  class="spdef3">100</td>
                 <td  class="speed2">81</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/131.png" alt="Image of Lapras"></td>
                 <td  class="pokemon number">131</td>
-                <td  class="pokemon name">Lapras</td>
+                <td  class="False">Lapras</td>
                 <td  class="water">Water</td>
                 <td  class="ice">Ice</td>
-                <td  class="total">535</td>
                 <td  class="health2">130</td>
                 <td  class="attack2">85</td>
                 <td  class="defense2">80</td>
                 <td  class="spatk2">85</td>
                 <td  class="spdef3">95</td>
                 <td  class="speed1">60</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/132.png" alt="Image of Ditto"></td>
                 <td  class="pokemon number">132</td>
-                <td  class="pokemon name">Ditto</td>
+                <td  class="False">Ditto</td>
                 <td  class="normal">Normal</td>
-                <td  class=""></td>
-                <td  class="total">288</td>
+                <td  class="none">None</td>
                 <td  class="health0">48</td>
                 <td  class="attack1">48</td>
                 <td  class="defense1">48</td>
                 <td  class="spatk1">48</td>
                 <td  class="spdef1">48</td>
                 <td  class="speed1">48</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/133.png" alt="Image of Eevee"></td>
                 <td  class="pokemon number">133</td>
-                <td  class="pokemon name">Eevee</td>
+                <td  class="False">Eevee</td>
                 <td  class="normal">Normal</td>
-                <td  class=""></td>
-                <td  class="total">325</td>
+                <td  class="none">None</td>
                 <td  class="health0">55</td>
                 <td  class="attack1">55</td>
                 <td  class="defense1">50</td>
                 <td  class="spatk0">45</td>
                 <td  class="spdef1">65</td>
                 <td  class="speed1">55</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/134.png" alt="Image of Vaporeon"></td>
                 <td  class="pokemon number">134</td>
-                <td  class="pokemon name">Vaporeon</td>
+                <td  class="False">Vaporeon</td>
                 <td  class="water">Water</td>
-                <td  class=""></td>
-                <td  class="total">525</td>
+                <td  class="none">None</td>
                 <td  class="health2">130</td>
                 <td  class="attack2">65</td>
                 <td  class="defense1">60</td>
                 <td  class="spatk3">110</td>
                 <td  class="spdef3">95</td>
                 <td  class="speed1">65</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/135.png" alt="Image of Jolteon"></td>
                 <td  class="pokemon number">135</td>
-                <td  class="pokemon name">Jolteon</td>
+                <td  class="False">Jolteon</td>
                 <td  class="electric">Electric</td>
-                <td  class=""></td>
-                <td  class="total">525</td>
+                <td  class="none">None</td>
                 <td  class="health1">65</td>
                 <td  class="attack2">65</td>
                 <td  class="defense1">60</td>
                 <td  class="spatk3">110</td>
                 <td  class="spdef3">95</td>
                 <td  class="speed4">130</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/136.png" alt="Image of Flareon"></td>
                 <td  class="pokemon number">136</td>
-                <td  class="pokemon name">Flareon</td>
+                <td  class="False">Flareon</td>
                 <td  class="fire">Fire</td>
-                <td  class=""></td>
-                <td  class="total">525</td>
+                <td  class="none">None</td>
                 <td  class="health1">65</td>
                 <td  class="attack4">130</td>
                 <td  class="defense1">60</td>
                 <td  class="spatk2">95</td>
                 <td  class="spdef3">110</td>
                 <td  class="speed1">65</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/137.png" alt="Image of Porygon"></td>
                 <td  class="pokemon number">137</td>
-                <td  class="pokemon name">Porygon</td>
+                <td  class="False">Porygon</td>
                 <td  class="normal">Normal</td>
-                <td  class=""></td>
-                <td  class="total">395</td>
+                <td  class="none">None</td>
                 <td  class="health1">65</td>
                 <td  class="attack2">60</td>
                 <td  class="defense1">70</td>
                 <td  class="spatk2">85</td>
                 <td  class="spdef2">75</td>
                 <td  class="speed0">40</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/138.png" alt="Image of Omanyte"></td>
                 <td  class="pokemon number">138</td>
-                <td  class="pokemon name">Omanyte</td>
+                <td  class="False">Omanyte</td>
                 <td  class="rock">Rock</td>
                 <td  class="water">Water</td>
-                <td  class="total">355</td>
                 <td  class="health0">35</td>
                 <td  class="attack1">40</td>
                 <td  class="defense2">100</td>
                 <td  class="spatk2">90</td>
                 <td  class="spdef1">55</td>
                 <td  class="speed0">35</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/139.png" alt="Image of Omastar"></td>
                 <td  class="pokemon number">139</td>
-                <td  class="pokemon name">Omastar</td>
+                <td  class="False">Omastar</td>
                 <td  class="rock">Rock</td>
                 <td  class="water">Water</td>
-                <td  class="total">495</td>
                 <td  class="health1">70</td>
                 <td  class="attack2">60</td>
                 <td  class="defense3">125</td>
                 <td  class="spatk3">115</td>
                 <td  class="spdef2">70</td>
                 <td  class="speed1">55</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/140.png" alt="Image of Kabuto"></td>
                 <td  class="pokemon number">140</td>
-                <td  class="pokemon name">Kabuto</td>
+                <td  class="False">Kabuto</td>
                 <td  class="rock">Rock</td>
                 <td  class="water">Water</td>
-                <td  class="total">355</td>
                 <td  class="health0">30</td>
                 <td  class="attack2">80</td>
                 <td  class="defense2">90</td>
                 <td  class="spatk1">55</td>
                 <td  class="spdef1">45</td>
                 <td  class="speed1">55</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/141.png" alt="Image of Kabutops"></td>
                 <td  class="pokemon number">141</td>
-                <td  class="pokemon name">Kabutops</td>
+                <td  class="False">Kabutops</td>
                 <td  class="rock">Rock</td>
                 <td  class="water">Water</td>
-                <td  class="total">495</td>
                 <td  class="health1">60</td>
                 <td  class="attack4">115</td>
                 <td  class="defense2">105</td>
                 <td  class="spatk1">65</td>
                 <td  class="spdef2">70</td>
                 <td  class="speed2">80</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/142.png" alt="Image of Aerodactyl"></td>
                 <td  class="pokemon number">142</td>
-                <td  class="pokemon name">Aerodactyl</td>
+                <td  class="False">Aerodactyl</td>
                 <td  class="rock">Rock</td>
                 <td  class="flying">Flying</td>
-                <td  class="total">515</td>
                 <td  class="health1">80</td>
                 <td  class="attack3">105</td>
                 <td  class="defense1">65</td>
                 <td  class="spatk1">60</td>
                 <td  class="spdef2">75</td>
                 <td  class="speed4">130</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/143.png" alt="Image of Snorlax"></td>
                 <td  class="pokemon number">143</td>
-                <td  class="pokemon name">Snorlax</td>
+                <td  class="False">Snorlax</td>
                 <td  class="normal">Normal</td>
-                <td  class=""></td>
-                <td  class="total">540</td>
+                <td  class="none">None</td>
                 <td  class="health3">160</td>
                 <td  class="attack3">110</td>
                 <td  class="defense1">65</td>
                 <td  class="spatk1">65</td>
                 <td  class="spdef3">110</td>
                 <td  class="speed0">30</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="true">
                 <td  class="image"><img src="img/front/144.png" alt="Image of Articuno"></td>
                 <td  class="pokemon number">144</td>
-                <td  class="pokemon name">Articuno</td>
+                <td  class="True">Articuno</td>
                 <td  class="ice">Ice</td>
                 <td  class="flying">Flying</td>
-                <td  class="total">580</td>
                 <td  class="health1">90</td>
                 <td  class="attack2">85</td>
                 <td  class="defense2">100</td>
                 <td  class="spatk2">95</td>
                 <td  class="spdef4">125</td>
                 <td  class="speed2">85</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_true">True</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="true">
                 <td  class="image"><img src="img/front/145.png" alt="Image of Zapdos"></td>
                 <td  class="pokemon number">145</td>
-                <td  class="pokemon name">Zapdos</td>
+                <td  class="True">Zapdos</td>
                 <td  class="electric">Electric</td>
                 <td  class="flying">Flying</td>
-                <td  class="total">580</td>
                 <td  class="health1">90</td>
                 <td  class="attack3">90</td>
                 <td  class="defense2">85</td>
                 <td  class="spatk3">125</td>
                 <td  class="spdef2">90</td>
                 <td  class="speed3">100</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_true">True</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="true">
                 <td  class="image"><img src="img/front/146.png" alt="Image of Moltres"></td>
                 <td  class="pokemon number">146</td>
-                <td  class="pokemon name">Moltres</td>
+                <td  class="True">Moltres</td>
                 <td  class="fire">Fire</td>
                 <td  class="flying">Flying</td>
-                <td  class="total">580</td>
                 <td  class="health1">90</td>
                 <td  class="attack3">100</td>
                 <td  class="defense2">90</td>
                 <td  class="spatk3">125</td>
                 <td  class="spdef2">85</td>
                 <td  class="speed2">90</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_true">True</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/147.png" alt="Image of Dratini"></td>
                 <td  class="pokemon number">147</td>
-                <td  class="pokemon name">Dratini</td>
+                <td  class="False">Dratini</td>
                 <td  class="dragon">Dragon</td>
-                <td  class=""></td>
-                <td  class="total">300</td>
+                <td  class="none">None</td>
                 <td  class="health0">41</td>
                 <td  class="attack2">64</td>
                 <td  class="defense1">45</td>
                 <td  class="spatk1">50</td>
                 <td  class="spdef1">50</td>
                 <td  class="speed1">50</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/148.png" alt="Image of Dragonair"></td>
                 <td  class="pokemon number">148</td>
-                <td  class="pokemon name">Dragonair</td>
+                <td  class="False">Dragonair</td>
                 <td  class="dragon">Dragon</td>
-                <td  class=""></td>
-                <td  class="total">420</td>
+                <td  class="none">None</td>
                 <td  class="health1">61</td>
                 <td  class="attack2">84</td>
                 <td  class="defense1">65</td>
                 <td  class="spatk1">70</td>
                 <td  class="spdef2">70</td>
                 <td  class="speed1">70</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/149.png" alt="Image of Dragonite"></td>
                 <td  class="pokemon number">149</td>
-                <td  class="pokemon name">Dragonite</td>
+                <td  class="False">Dragonite</td>
                 <td  class="dragon">Dragon</td>
                 <td  class="flying">Flying</td>
-                <td  class="total">600</td>
                 <td  class="health1">91</td>
                 <td  class="attack4">134</td>
                 <td  class="defense2">95</td>
                 <td  class="spatk2">100</td>
                 <td  class="spdef3">100</td>
                 <td  class="speed2">80</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="true">
                 <td  class="image"><img src="img/front/150.png" alt="Image of Mewtwo"></td>
                 <td  class="pokemon number">150</td>
-                <td  class="pokemon name">Mewtwo</td>
+                <td  class="True">Mewtwo</td>
                 <td  class="psychic">Psychic</td>
-                <td  class=""></td>
-                <td  class="total">680</td>
+                <td  class="none">None</td>
                 <td  class="health1">106</td>
                 <td  class="attack3">110</td>
                 <td  class="defense2">90</td>
                 <td  class="spatk4">154</td>
                 <td  class="spdef2">90</td>
                 <td  class="speed4">130</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_true">True</td>
+                <td  class="genrby"></td>
             </tr>
-            <tr>
+            <tr class="false">
                 <td  class="image"><img src="img/front/151.png" alt="Image of Mew"></td>
                 <td  class="pokemon number">151</td>
-                <td  class="pokemon name">Mew</td>
+                <td  class="False">Mew</td>
                 <td  class="psychic">Psychic</td>
-                <td  class=""></td>
-                <td  class="total">600</td>
+                <td  class="none">None</td>
                 <td  class="health1">100</td>
                 <td  class="attack3">100</td>
                 <td  class="defense2">100</td>
                 <td  class="spatk2">100</td>
                 <td  class="spdef3">100</td>
                 <td  class="speed3">100</td>
-                <td  class="genrby">1</td>
-                <td  class="legendary_false">False</td>
+                <td  class="genrby"></td>
             </tr>
         </table>
     </body>
