@@ -452,9 +452,9 @@ tr.true {
 #https://graphicdesign.stackexchange.com/questions/6368/looking-for-a-good-video-game-retro-pixel-like-web-safe-font
 
 #Writes a css file of all the sitewide styling
-css = open('pokestyle.css', 'w')
-css.write(style)
-css.close()
+# css = open('pokestyle.css', 'w')
+# css.write(style)
+# css.close()
 
 #Writes the typelist
 typelist = []
@@ -493,10 +493,10 @@ def navbar(pageType):
         navbar += '                <li><a href="allpokemon.html" class="active">All Pokemon</a></li>\n'
     else:
         navbar += '                <li><a href="allpokemon.html">All Pokemon</a></li>\n'
-    if pageType == 'top10':
-        navbar += '                <li><a href="top10.html" class="active">Top 10</a></li>\n'
+    if pageType == 'extremes':
+        navbar += '                <li><a href="extremes.html" class="active">The Extremes</a></li>\n'
     else:
-        navbar += '                <li><a href="top10.html">Top 10</a></li>\n'
+        navbar += '                <li><a href="extremes.html">The Extremes</a></li>\n'
     navbar += '''            </ul>
         </nav>'''
     return navbar
@@ -525,6 +525,10 @@ def makeTypePageFile(type, dataList):
     fileout.close()
 
 #Makes the homepage
+
+homeData = data[:2] + [data[25]]
+homeTable = makeHTMLTable(homeData)
+
 home = '''<!DOCTYPE HTML>
 <html>
 ''' + '''    <head>
@@ -534,8 +538,7 @@ home = '''<!DOCTYPE HTML>
     <body>''' + navbar('homepage') + '''
         <h1>The Pokedex</h1>
         <h2>By Theodore Yochum</h2>
-        <p>I have always enjoyed pokemon and as a kid the anime was one of my favorite things to watch, and one of my moms least favorite due to the fact that the pokemon constantly shout their own name over and over. I was never super into the games but they always looked fun. If I had to choose a favorite Gen 1 pokemon it would probably be Bulbasaur with pikachu coming in close second because of course. This project seemed like it would be pretty cool because you are given a lot of different numbers you can mess around with, and most of them have associated colors allowing you to do some pretty fun stuff with the styling. For this project I, made it so that the pokemon types are colored according to the original values, each attribute with a numerical value is colored on a gradient at 20% intervals with the lowest value being the lightest color and the highest being the darkest color, also each entry has a game version column which is colored corresponding to which version of pokemon it appeared in. The few pokemon that have gold colored borders are legendaries. The entire website uses a font that is inteded to replicate the original gameboy font.</p>
-'''
+        <p>As a kid I had the standard amount of exposure to pokemon, I watched the original anime and dabled in the card game, but I never played any of the games that were in the original format and only dabled in a Wii game as a kid, the tutorial of which I never figured out how to finish. From my exposure I would say that my favorite pokemon has to be bulbasaur because he is adorable, with pikachu obviously as the runner up. This project seemed like it would offer a lot of creativity for how to approach it due to the sheer amount of data and corresponding styling. Pokemon is a very colorful game and they have already designed a color scheme for you, which allows you to make a really interesting and colorful table with minimal effort.</p> ''' + homeTable 
 
 homepage = open('homepage.html', 'w')
 homepage.write(home)
@@ -551,7 +554,7 @@ full = '''<!DOCTYPE HTML>
     </head>
     <body> ''' + navbar('all') + '''
         <h1>All of the pokemon</h1>
-''' + pokedex + '''
+        <p>This is a list of all of the pokemon in the first generation, the entire webpage is using a replica gameboy font from <a href="https://graphicdesign.stackexchange.com/questions/6368/looking-for-a-good-video-game-retro-pixel-like-web-safe-font"> here</a>. Each Pokemon is listed with its number, its name, and its primary and secondary type with the type backgrounds colored according to <a href="https://www.epidemicjohto.com/t882-type-colors-hex-colors"> this website </a>. Each attribute of the pokemon is colored on a gradient from 0 to 1 with 1 being the highest value, for example chansey with 250 health, and 0 being the lowest, diglet with 10 health. There is a linear scale on the gradients and the coloring is done on a 20% interval with the colors getting darker as the value gets higher, the colors were chosen by whatever made sense to me and I eyeballed a gradient that seemed to get progressively darker while retaining the core color. The generation entry of the original data set is replaced by a game version entry with the table cell containing the color of each version of generation 1 the pokemon appeared in, red blue and yellow according to <a href="https://www.ign.com/wikis/pokemon-red-blue-yellow-version/Pokemon_Red,_Blue,_and_Yellow_Version_Differences">this website</a>, for exapmple ekans only appeared in pokemon red, while sandshrew appeared in blue and yellow. The legendary entry has been removed entirely as it was false for the vast majority and has been replaced by a gold border on any legendary pokemon. All of these stylings are consistent between type pages.</p>''' + pokedex + '''
     </body>
 </html>'''
 
@@ -559,7 +562,75 @@ allpokemon = open('allpokemon.html', 'w')
 allpokemon.write(full)
 allpokemon.close()
 
+#Makes a webpage of the pokemon with the highest and lowest stats in each category
+#Sets up and adds to a list every index of the pokemon with the highest and lowest stands of each category
+extremes = []
+for i in range(1, len(data[1:])):
+    if hp_min == int(data[i][5][0]):
+        extremes.append(i)
+    if hp_max == int(data[i][5][0]):
+        extremes.append(i)
+
+for i in range(1, len(data[1:])):
+    if atk_min == int(data[i][6][0]):
+        extremes.append(i)
+    if atk_max == int(data[i][6][0]):
+        extremes.append(i)
+
+for i in range(1, len(data[1:])):
+    if def_min == int(data[i][7][0]):
+        extremes.append(i)
+    if def_max == int(data[i][7][0]):
+        extremes.append(i)
+
+for i in range(1, len(data[1:])):
+    if spa_min == int(data[i][8][0]):
+        extremes.append(i)
+    if spa_max == int(data[i][8][0]):
+        extremes.append(i)
+
+for i in range(1, len(data[1:])):
+    if spd_min == int(data[i][9][0]):
+        extremes.append(i)
+    if spd_max == int(data[i][9][0]):
+        extremes.append(i)
+
+for i in range(1, len(data[1:])):
+    if spe_min == int(data[i][10][0]):
+        extremes.append(i)
+    if spe_max == int(data[i][10][0]):
+        extremes.append(i)
+
+#Sorts the list and removes any repeating entries
+extremes.sort()
+sortedExtremes = extremes + []
+extremes = []
+for i in sortedExtremes:
+    if not i in extremes:
+        extremes.append(i)
+
+#Turns the extremes data into a table
+extremesData = [data[0]]
+for i in extremes:
+    extremesData.append(data[i])
+extremesTable = makeHTMLTable(extremesData)
+
+extremesHTML = '''<!DOCTYPE HTML>
+<html>
+''' + '''    <head>
+        <title>The Extremes</title>
+        <link rel="stylesheet" href="pokestyle.css">
+    </head>
+    <body> ''' + navbar('extremes') + '''
+        <h1>The Extremes</h1>
+        <p>This is a list containing all pokemon with the maximum and minimum values for each stat. While I intended to make a top 10 and simply omit speed, the assumption that each stat would have a single lowest and highest and that each pokemon would only appear once was proven false. Someone at Nintendo had the bright idea of making Chansey have both the maximum health, but also the minimum attack and defense. Also Magikarp has the lowest Sp. Atk and Sp. Def because Magikarp, as well as being tied with caterpie and weedle for the lowest Sp. Def. I decided that reaching an even 10 would be impossible so I also added speed and changed it to a table of the extremes, each pokemon appears only once.</p> ''' + extremesTable + '''
+    </body>
+</html>'''
+
+theExtremes = open('extremes.html', 'w')
+theExtremes.write(extremesHTML)
+theExtremes.close()
+
 #Creates a webpage corresponding to each element of typeList
 for type in typelist:
     makeTypePageFile(type,data)
-

@@ -8,7 +8,6 @@ body {
     text-align: center;
     padding-left: 5%;
     padding-right: 5%;
-    padding-top: 2%;
     padding-bottom: 2%;
     font-family: pokedex;
 }
@@ -41,11 +40,16 @@ td.header{
 
 /* Navbar */
 
+nav {
+    padding-bottom: 10px;
+}
+
 nav li {
     display: inline-block;
     position: relative;
     padding-right: 10px;
     padding-left: 10px;
+    font-size: 20px;
 }
 
 nav li ul {
@@ -66,6 +70,7 @@ nav li ul li {
     border: solid 1px black;
     width: 140px;
     margin-bottom: 5px;
+    font-size: 16px;
 }
 
 nav li:hover > ul {
